@@ -1,12 +1,4 @@
 
-//ternary operator
-var n=-5;
-var result;
-//var remainder = n % 2;
-//result = (0 == remainder) ? "even" : "odd" ;
-//console.log("This is the number", result);
-result= (n<0) ? "negetive" : "positive";
-console.log("this is the ", result, "number");
 
 //while loop
 //var i=0;
@@ -74,3 +66,29 @@ for(i=0,j=10; i<=10; i++,j--){
     console.log(i,j);
 }
 
+var n=5;
+factorial=1;
+
+for(i=n; i>1; i--){
+    //factorial = factorial*i;
+    factorial *=i;
+}
+console.log("factorial is", factorial);
+
+/*
+var factorial = 1;
+for(var j=1; j<=10; j++){
+    factorial =1;
+    for(i=j; i>1; i--){
+        factorial= factorial*i;
+        //factorial *=i;
+    }
+    console.log("factorial of",j, "is", factorial);
+}
+*/
+
+factorial=1;
+for(var i=1; i<=10; i++){
+    factorial *=i;
+    console.log("factorial of",i, "is", factorial);
+}
