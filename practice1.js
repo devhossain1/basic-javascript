@@ -152,3 +152,26 @@ for(var i=1; i<10; i++){
     series= series+ n + " "; 
 }
 console.log("series 5:",series);
+
+
+for(var i=1; i<=10; i++){
+    var series= i + "= ";
+    for(var j=1; j<=10; j++){
+        series += i*j + " ";
+    }
+    console.log(series);
+}
+
+var n=144;
+var range =Math.ceil(Math.sqrt(n));
+var divisors = "";
+
+for(var i=1; i<=range; i++){
+    if(n%i==0){
+        if(i==n/i){
+            divisors += i + " ";
+        }else
+        divisors +=i +" " + n/i + " ";
+    }
+}
+console.log("divisor is : ", divisors);
