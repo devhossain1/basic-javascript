@@ -47,7 +47,7 @@ console.log("\n another \n");
 //for(initialization; condition; steping){}
 //infinite loop: for (;;){ }
 /*
-var i;
+var i; 
 i = 0;
 
 for(;;){
@@ -67,7 +67,7 @@ for(i=0,j=10; i<=10; i++,j--){
 }
 
 var n=5;
-factorial=1;
+var factorial=1;
 
 for(i=n; i>1; i--){
     //factorial = factorial*i;
@@ -92,3 +92,63 @@ for(var i=1; i<=10; i++){
     factorial *=i;
     console.log("factorial of",i, "is", factorial);
 }
+
+//all series
+//2 4 6 8 10 12 14 16
+var series="";
+var n;
+for(var i=1; i<10; i++){
+    n= i*2;
+    series=series + n +  " ";
+}
+console.log(series);
+//1 4 7 10 13 16....
+series="1 ";
+n=1;
+for(var i=1; i<10; i++){
+    n=n+3;
+    series = series + n + " ";
+}
+console.log("series 2:" , series);
+
+series="1 ";
+n=1;
+for(var i=1; i<10; i++){
+    n=n+3;
+    series = series + n + " ";
+}
+console.log("series 2:" , series);
+
+//0 3 8 15.....
+series = "";
+
+for(var i=1; i<10; i++){
+    n=i*i-1;
+    series= series + n + " ";
+}
+console.log("series 3: ",series);
+
+//1 4 3 8 5 12 7.....
+
+series="";
+for(var i=1; i<10; i++){
+    n=i;
+    if(n%2==0){
+        n=i*2;
+    }
+    series=series + n + " ";
+}
+console.log("series 4:", series);
+
+//0 1 1 2 3 5 8 13 ==fibonacci
+series = "0 1 ";
+n=0;
+var x=0;
+var y =1;
+for(var i=1; i<10; i++){
+    n=x+y;
+    x=y;
+    y=n;
+    series= series+ n + " "; 
+}
+console.log("series 5:",series);
