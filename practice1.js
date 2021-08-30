@@ -1,145 +1,5 @@
 
 
-//while loop
-//var i=0;
-/*
-while(true){
-    i++;
-    console.log(i);
-    if(9 == i){
-        break;
-    }
-
-}
-*/
-/*
-while(i<=10){
-    console.log(i);
-    i+=2;
-}
-*/
-/*
-var i = 0;
-
-while(i++ < 5){
-    console.log(i);
-}
-
-console.log("\n reset \n");
-i=0;
-while(++i < 5){
-    console.log(i);
-}
-*/
-/*
-var i=0;
-do{
-    i++;
-    console.log(i);
-    if(10==i){
-        break;  
-    }
-}while(true);
-*/
-console.log("\n another \n");
-
-//for loop
-//for(initialization; condition; steping){}
-//infinite loop: for (;;){ }
-/*
-var i; 
-i = 0;
-
-for(;;){
-    i++;
-    console.log(i);
-    if(8==i){
-        break;
-    }
-}
-*/
-console.log("\n another \n");
-
-var i,j;
-
-for(i=0,j=10; i<=10; i++,j--){
-    console.log(i,j);
-}
-
-var n=5;
-var factorial=1;
-
-for(i=n; i>1; i--){
-    //factorial = factorial*i;
-    factorial *=i;
-}
-console.log("factorial is", factorial);
-
-/*
-var factorial = 1;
-for(var j=1; j<=10; j++){
-    factorial =1;
-    for(i=j; i>1; i--){
-        factorial= factorial*i;
-        //factorial *=i;
-    }
-    console.log("factorial of",j, "is", factorial);
-}
-*/
-
-factorial=1;
-for(var i=1; i<=10; i++){
-    factorial *=i;
-    console.log("factorial of",i, "is", factorial);
-}
-
-//all series
-//2 4 6 8 10 12 14 16
-var series="";
-var n;
-for(var i=1; i<10; i++){
-    n= i*2;
-    series=series + n +  " ";
-}
-console.log(series);
-//1 4 7 10 13 16....
-series="1 ";
-n=1;
-for(var i=1; i<10; i++){
-    n=n+3;
-    series = series + n + " ";
-}
-console.log("series 2:" , series);
-
-series="1 ";
-n=1;
-for(var i=1; i<10; i++){
-    n=n+3;
-    series = series + n + " ";
-}
-console.log("series 2:" , series);
-
-//0 3 8 15.....
-series = "";
-
-for(var i=1; i<10; i++){
-    n=i*i-1;
-    series= series + n + " ";
-}
-console.log("series 3: ",series);
-
-//1 4 3 8 5 12 7.....
-
-series="";
-for(var i=1; i<10; i++){
-    n=i;
-    if(n%2==0){
-        n=i*2;
-    }
-    series=series + n + " ";
-}
-console.log("series 4:", series);
-
 //0 1 1 2 3 5 8 13 ==fibonacci
 series = "0 1 ";
 n=0;
@@ -175,3 +35,64 @@ for(var i=1; i<=range; i++){
     }
 }
 console.log("divisor is : ", divisors);
+
+var monthName = "April";
+var days = 31;
+var startingDay = 3; 
+
+console.log("\n\n calender of ", monthName,"\n");
+console.log("sun   mon   tue   wed   thu   fri   sat");
+
+for(var i=0; i<5; i++){
+    var dayRow = "";
+    for(var j=1; j<=7; j++){
+        var currentDay=7*i + j - startingDay;
+        if(currentDay>days){
+            break;
+        }else if(currentDay<1){
+            currentDay= " ";
+        }
+        if(currentDay>9){
+            dayRow += currentDay+"    ";  
+        }else
+        dayRow += currentDay+"     ";
+    }
+    console.log(dayRow);
+}
+
+//array 
+var fruits = ["apple","banana","orange", "grape"];
+console.log(fruits[4]);
+
+fruits[4]="mango";
+console.log(fruits[4]);
+
+console.log(fruits.length);
+var lastOffset = fruits.length-1;
+console.log(fruits[lastOffset]);
+
+var myList=["apple","orange","banana"];
+myList[myList.length]="grape";
+myList.push("pineapple");
+myList.unshift("mangoes");
+console.log(myList.length);
+var lastElement=myList.pop();
+
+var firstElement=myList.shift();
+console.log(myList.length);
+console.log(myList);
+console.log(lastElement);
+console.log(firstElement);
+
+var males= ["rahim","karim","shamima", "salek"];
+var females=["rahima","karima"];
+//var lastPerson=males.pop();
+//females.push(lastPerson);
+var personRemove=males[2];
+females.push(personRemove)
+
+delete(males[2]);
+//males.splice(2,1);
+
+console.log(males,females);
+console.log(males.length, females.length);
