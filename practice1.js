@@ -1,65 +1,5 @@
 
 
-//0 1 1 2 3 5 8 13 ==fibonacci
-series = "0 1 ";
-n=0;
-var x=0;
-var y =1;
-for(var i=1; i<10; i++){
-    n=x+y;
-    x=y;
-    y=n;
-    series= series+ n + " "; 
-}
-console.log("series 5:",series);
-
-
-for(var i=1; i<=10; i++){
-    var series= i + "= ";
-    for(var j=1; j<=10; j++){
-        series += i*j + " ";
-    }
-    console.log(series);
-}
-
-var n=144;
-var range =Math.ceil(Math.sqrt(n));
-var divisors = "";
-
-for(var i=1; i<=range; i++){
-    if(n%i==0){
-        if(i==n/i){
-            divisors += i + " ";
-        }else
-        divisors +=i +" " + n/i + " ";
-    }
-}
-console.log("divisor is : ", divisors);
-
-var monthName = "April";
-var days = 31;
-var startingDay = 3; 
-
-console.log("\n\n calender of ", monthName,"\n");
-console.log("sun   mon   tue   wed   thu   fri   sat");
-
-for(var i=0; i<5; i++){
-    var dayRow = "";
-    for(var j=1; j<=7; j++){
-        var currentDay=7*i + j - startingDay;
-        if(currentDay>days){
-            break;
-        }else if(currentDay<1){
-            currentDay= " ";
-        }
-        if(currentDay>9){
-            dayRow += currentDay+"    ";  
-        }else
-        dayRow += currentDay+"     ";
-    }
-    console.log(dayRow);
-}
-
 //array 
 var fruits = ["apple","banana","orange", "grape"];
 console.log(fruits[4]);
@@ -96,3 +36,55 @@ delete(males[2]);
 
 console.log(males,females);
 console.log(males.length, females.length);
+var list=[
+    "sun",//0 = -7
+    "mon",//1 = -6
+    "tue",//2 = -5
+    "wed",//3 = -4
+    "thu",//4 = -3
+    "fri",//5 = -2
+    "sat",//6 = -1
+   ];
+   //var chunk=list.slice(4,6);
+   //console.log(list, chunk);
+
+   //var length= list.length-3;
+   //var chunk=list.slice(length);
+   var chunk= list.splice(-4,2);
+
+   console.log(list, chunk);
+
+   var list1 = ["apple","mon","tue","wed"];
+
+   var list2=list1.slice();
+   //var list2 = [...list1];
+   //var list2 = Array.from(list1);
+   list2[1] = "mangoes";
+   console.log(list1,list2);
+
+   var type1 = ["jan","feb"];
+   var type2 =  ["mar","apr"];
+   var type3 = ["may", "jun"];
+
+   //var type = type1.concat(type2,type3);
+   var type = [].concat(type1,type2,type3);
+   console.log(type);
+
+   var list=[
+    "sun",//0 = -7
+    "mon",//1 = -6
+    "tue",//2 = -5
+    "wed",//3 = -4
+    "thu",//4 = -3
+    "fri",//5 = -2
+    "sat",//6 = -1
+    "apple"
+   ];
+
+   var length = list.length;
+//for(var i=0; i<length; i++){
+ //   console.log("element at", i, "offset of",list[i]);
+//}
+for(i in list){
+    console.log("element at", i, "offset of",list[i]);
+}
