@@ -73,7 +73,7 @@ console.log(students.length);
 addStudents(students,"khalek","Ata");
 console.log(students.length);
 
-//... spread operator
+//... spread
 function addStudents(storage, ...people){
     for(i=0; i<people.length; i++){
         storage.push(people[i]);
