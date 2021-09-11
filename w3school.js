@@ -70,8 +70,8 @@ console.log(text1);
 let text2 = "Hello world";
 console.log( typeof text2.charAt(9));
 
-let x= "5";
-console.log(x.padEnd(4,0));
+//let x= "5";
+//console.log(x.padEnd(4,0));
 
 let str = "please locate where 'locate' ocures";
 console.log(str.indexOf("please"));
@@ -97,34 +97,79 @@ console.log(parseInt("10.23"));
 console.log(parseFloat("10.23"));
 console.log(Number.MAX_VALUE);
 
-let fruits = ["apple", "banana", "orange", "lichi"];
-//Array.isArray(fruits);
-console.log(fruits instanceof Array);
-console.log(fruits.length);
-/*
-for(i=0; i<fruits.length; i++){
-    //console.log(i);
-    console.log( i + " " + fruits[i]);
-    //console.log(fruits[fruits.length-1]);
-}
- */
-function myfunction (value){
-console.log(value);
-}
-
-fruits.forEach (myfunction);
-
-const person = [];
-person["firstName"] = "john";
-person["lastName"] = "doe";
-person["age"] = 28;
-
-console.log(person);
-console.log(typeof person);
-console.log(person.length);
-
-person.push("lemon");
-
-console.log(person);
-
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+//console.log(fruits.push("pineapple"));
+
+console.log(fruits.splice(2,1));
+console.log(fruits);
+
+const arr1 = ["Cecilie", "Lone"];
+const arr2 = ["Emil", "Tobias", "Linus"];
+const arr3 = ["Robin", "Morgan"];
+const myChildren = arr1.concat(arr2,arr3, "apple" );
+console.log(myChildren);
+
+const points = [40, 100, 1, 5, 8, 25, 10];
+// points.sort(function(a,b){
+//     return a-b;
+// })
+// console.log(points);
+// console.log(points[points.length-1]);
+
+function myArrayMax(arr){
+    return Math.max.apply(null, arr);
+}
+console.log(myArrayMax(points));
+
+console.log(Math.max.apply(null, [2,9,4,6]));
+
+const cars = [
+    {type:"Volvo", year:2016},
+    {type:"Saab", year:2001},
+    {type:"BMW", year:2010}
+  ];
+
+  cars.sort(function(a,b){
+      let x = a.type.toLowerCase();
+      let y = b.type.toLowerCase();
+      if(x < y){
+          return -1;
+      }
+      if(x> y){ return 1;}
+      return 0;
+  });
+  console.log(cars);
+/*
+  const number = [45, 4, 9, 16, 25];
+  function myFunction(value, index, array){
+    return value >10;
+  }
+ const newNumber = number.filter(myFunction);
+ console.log(newNumber);
+ */
+const numbers = [45, 4, 9, 16, 4, 25];
+function myFunction (value, index, array){
+  //return total + (value*value);
+  return 9< value; 
+}
+const newNumbers = numbers.find(myFunction);
+console.log(newNumbers);
+//console.log(numbers.lastIndexOf(4) + 1);
+//console.log(numbers.includes(16));
+console.log(Array.from("ASDDGGR"));
+const d = new Date();
+console.log(d.setDate(15));
+
+let msec = Date.parse("March 21, 2012");
+const T = new Date(msec);
+
+console.log(Math.acos(0 * Math.PI / 180));
+
+console.log(Math.floor(Math.random() * 100) +1);
+
+function getRandomInteger(min, max){
+    return Math.floor(Math.random() *(max-min)) + min;
+}
+console.log(getRandomInteger(0, 10));
+//console.log(T);
