@@ -1,175 +1,294 @@
-// console.log('hello world');
-// let x = "volvo" + 16 + 4;
-// console.log(x);
-// let y = 2;
-// let z = 3;
-// let q = y**=z;
-// console.log(q);
-//let x=10;
-//x %=5;
-//console.log(typeof x);
-//let x = 5;
+// let myName = "hossain";
+// let myPhoneNumber = 01675886938;
+
+// console.log(isNaN(myName));
+// console.log(isNaN(myPhoneNumber));
+// if(isNaN(myName)){
+//     console.log("please enter your valid number");
+// }
+// var x= 5;
+// var y = 6;
+// //console.log("This is the anather topic " + x==y);
+// //console.log(`This is the anather topic : ${x==y}`);
+// console.log(2 + "9");
+// if (x != y){
+//     console.log("hossain");
+// }
+// console.log(x<y && x>0 && y<=6);
+// console.log(y<=x || x<0);
+
+// var a=5;
+// var b=10;
+//output a=10, b=5
+
+// var c= a;
+// a = b;
+// b = c;
+// a = a + b;
+// b = a - b;
+// a = a - b;
+
+// console.log("value of a is " + a);
+// console.log("value of b is " + b);
 /*
-let y =6;
-let z = 7;
+let year = 2020;
 
-let number = {x:5, y:6, z:7};
-console.log(typeof number);
-//about function
-
-function sleep(name, time){
-    console.log(name + " is sleeping from" + time);
+if(year % 4 ==0){
+  if(year % 100 == 0){
+    if(year % 400 ==0){
+        console.log("The  "+ year +" is  a leap year ");
+    }else{
+        console.log("The yea "+ year +" is not a leap year ");
+    }
+  }else{
+    console.log("The year "+ year +" is  a leap year ");
+  }
+}else{
+    console.log("The year "+ year +" is not a leap year ");
+} 
+//0,null, NaN, undefined
+if (score= undefined){
+    console.log("you loss the game");
+}else{
+    console.log("you win the game");
 }
-console.log( "He is a freelancer");
-sleep("jashim"," 10 am");
-sleep("rahim"," 3 pm");
-sleep("karim"," 9 pm");
-
-function myfunction(a,b){
-    // console.log("hello");
-    return(a*b);
-}
-//myfunction(3,4);
- myfunction();
-
- const car = {
-     name: "fiat",
-     model: 500,
-     weight: "400kg",
-     color: "white",
-     start: function(){
-         console.log("THe car has started");
-         this.drive();
-     },
-
-     drive: function() {
-         console.log("the car has driven");
-     },
-
- };
-
- console.log(car.weight);
- console.log(car['model']);
- car.start();
- //car.drive();
- let x= new Number(5);
- console.log(x);
-
-
-//let text = "We are the so-called \\Vikings\\ from \n the north.";
-console.log(text);
-
-let str ="apple, banana, orange";
-console.log(str.substr(7));
 */
 
-let text = " my name is hossain";
-let text1 = text.replace("hossain","ahmed");
-console.log(text1);
+//let age = 17;
+//console.log((age>= 18) ? "you can vote" : "you can not vote");
 
-let text2 = "Hello world";
-console.log( typeof text2.charAt(9));
+//else if statement
 
-//let x= "5";
-//console.log(x.padEnd(4,0));
-
-let str = "please locate where 'locate' ocures";
-console.log(str.indexOf("please"));
-
-let country = "Bangladesh"
-let a = 11;
-let b = 9;
-
-let sentense = `I love ${country} very much and it's population is ${a + b} core `;
-console.log(sentense);
-
-let myNumber = 32;
-console.log(myNumber.toString(2));
-
-let p =9.88;
-//console.log((123).toString());
-console.log(p.toExponential(3));
-console.log(p.toFixed(2));
-console.log(p.toPrecision(4));
-console.log(Number("10"));
-console.log(Number(new Date("2021-9-8")));
-console.log(parseInt("10.23"));
-console.log(parseFloat("10.23"));
-console.log(Number.MAX_VALUE);
-
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-
-//console.log(fruits.push("pineapple"));
-
-console.log(fruits.splice(2,1));
-console.log(fruits);
-
-const arr1 = ["Cecilie", "Lone"];
-const arr2 = ["Emil", "Tobias", "Linus"];
-const arr3 = ["Robin", "Morgan"];
-const myChildren = arr1.concat(arr2,arr3, "apple" );
-console.log(myChildren);
-
-const points = [40, 100, 1, 5, 8, 25, 10];
-// points.sort(function(a,b){
-//     return a-b;
-// })
-// console.log(points);
-// console.log(points[points.length-1]);
-
-function myArrayMax(arr){
-    return Math.max.apply(null, arr);
-}
-console.log(myArrayMax(points));
-
-console.log(Math.max.apply(null, [2,9,4,6]));
-
-const cars = [
-    {type:"Volvo", year:2016},
-    {type:"Saab", year:2001},
-    {type:"BMW", year:2010}
-  ];
-
-  cars.sort(function(a,b){
-      let x = a.type.toLowerCase();
-      let y = b.type.toLowerCase();
-      if(x < y){
-          return -1;
-      }
-      if(x> y){ return 1;}
-      return 0;
-  });
-  console.log(cars);
+// var area = "triangle";
+// var PI = 3.142, l = 5, b = 4, r = 3;
 /*
-  const number = [45, 4, 9, 16, 25];
-  function myFunction(value, index, array){
-    return value >10;
-  }
- const newNumber = number.filter(myFunction);
- console.log(newNumber);
- */
-const numbers = [45, 4, 9, 16, 4, 25];
-function myFunction (value, index, array){
-  //return total + (value*value);
-  return 9< value; 
+if(area == "circle"){
+    console.log("the area of circle is " + PI*r**2);
+}else if(area == "triangle"){
+    console.log("the area of triangle is " + (l*b)/2);
+}else if(area == rectangle){
+    console.log("the area of circle is " + PI*r**2);
+}else{
+    console.log(" there is no area")
 }
-const newNumbers = numbers.find(myFunction);
-console.log(newNumbers);
-//console.log(numbers.lastIndexOf(4) + 1);
-//console.log(numbers.includes(16));
-console.log(Array.from("ASDDGGR"));
-const d = new Date();
-console.log(d.setDate(15));
+*/
 
-let msec = Date.parse("March 21, 2012");
-const T = new Date(msec);
+//switch statement
 
-console.log(Math.acos(0 * Math.PI / 180));
+/*
+var area = "triangle";
+var PI = 3.142, l = 5, b = 4, r = 3;
 
-console.log(Math.floor(Math.random() * 100) +1);
-
-function getRandomInteger(min, max){
-    return Math.floor(Math.random() *(max-min)) + min;
+switch(area){
+    case 'circle':
+        console.log("the area of circle is " + PI*r**2);
+        break;
+    case 'triangle':
+        console.log("the area of triangle is " + (l*b)/2);
+        break;
+    case 'rectangle':
+        console.log("the area of circle is " + l*b);
+        break;
+    default:
+        console.log( "enter your valid value");          
 }
-console.log(getRandomInteger(0, 10));
-//console.log(T);
+*/
+
+//while loop
+
+// let num = 0;
+
+//  while(num <= 10){
+//     console.log(num);
+//     num++;
+// // }
+//  let num =20;
+//  do{
+//      console.log(num);
+//      num++;
+//  }while(num <=10);
+//for loop
+
+//  for(var num=1; num<=10; num++){
+//     var tableOf =8;
+//     //console.log(tableOf  + " * " + num + " = " + tableOf * num );
+//     console.log(`${tableOf} * ${num} = ${tableOf * num}`)
+//  } 
+
+ //function
+//  function sum(){
+//      var a=20, b=30;
+//      console.log( a+b);
+//  }
+//  sum();
+
+// function sum (a,b){
+//     return total = a+b;
+    
+// }
+// let exp = sum(20,30);
+// console.log(exp);
+
+//anonymous function
+
+// var expr = function(a,b) {
+//     return total = a + b;
+//}
+/*
+let sum = expr(20,30);
+console.log("the sum of two number is " + sum);
+
+function biodata(){
+    let firstName = "hossain";
+    console.log( firstName);
+    if(true){
+        let lastName = "ahmed";
+        console.log("the inner name is " + lastName);
+        console.log("the Inner " + firstName);
+    }
+    console.log("the outer name " + lastName);
+}
+biodata();
+*/
+//Default parameters
+// function defa(a, b=5){
+//     return a*b;
+
+// }
+// console.log(defa(3));
+
+//fat arrow function====================
+
+// console.log(sum());
+// function sum(){
+//     let a=20, b=30;
+//     let sum = a+b;
+//     return `the sum of the two number is ${sum}`;
+// }
+
+// const sum = () => `the sum of the two number is ${(a=5) + (b=10)}`;
+// console.log(sum());
+// var myName = ["hossain","ahmed", "rofiq", "shofiq"];
+
+// for(var i = 0; i<myName.length; i++){
+//     console.log(myName[i]);
+// }
+
+// for(let element in myName){
+//     console.log(element);
+// }
+
+// for(let element of myName){
+//     console.log(element);
+// }
+//var myName = ["hossain","ahmed", "rofiq", "shofiq"];
+// myName.forEach(function(element, index, array){
+//     console.log(element + " index : " + index + " " + array);
+// })
+//fat arrow function====================================
+
+// myName.forEach((element, index, array) => {
+//     console.log(element + " index : " + index + " " + array);
+// })
+
+//array search filter=====================================
+
+//var myName = ["hossain","ahmed", "rofiq", "shofiq", "karim"];
+
+//console.log(myName.lastIndexOf("rofiq", 4));
+//console.log(myName.includes("rofiq"));
+
+//find or findIndex =================================
+
+// const prices = [200, 300, 350, 400, 500, 600];
+//prices < 400
+// const findElem = prices.find((currentVal) => {
+//     return currentVal <400;
+// });
+// console.log(findElem);
+
+//console.log(prices.find((currentVal) => currentVal > 1400) );
+//console.log(prices.findIndex((currentVal) => currentVal > 1400));
+
+//array filter================================================
+// const prices = [200, 300, 350, 400, 500, 600];
+// const newElem = prices.filter((elem, index) => {
+//     return elem <400;
+// });
+// console.log(newElem);
+
+//console.log(prices.filter((elem, index) => elem<400 ));
+
+//sort, push, unshift, pop, shift==============================
+
+// const months = [ "jan", "feb", "march" , "april"];
+// //console.log(months.sort());
+// months.shift();
+// console.log(months);
+
+// 1 : add Dec at the end of the array:?========using splice===========
+//const months = [ "jan", "feb", "march" , "april"];
+//const newMonths = months.splice(months.length, 0 , "Dec");
+//console.log(months);
+
+// 2 : what is the return value of the spice method ?
+//console.log(newMonths);
+
+// 3 : update march to March?
+// const months = [ "jan", "feb", "march" ,"june", "april"];
+// const indexOfMonth = months.indexOf("march");
+// if(indexOfMonth != -1){
+//     const updateMonth = months.splice(indexOfMonth, 1, "March");
+//     console.log(months);
+// }else{
+//     console.log("no such data found");
+// }
+// 4 : how to delete june?
+/*
+const months = [ "jan", "feb", "march" ,"june", "april","may"];
+const indexOfMonth = months.indexOf("june");
+if(indexOfMonth != -1){
+    const deleteMonth = months.splice(indexOfMonth,Infinity);
+    console.log(months);
+    console.log(deleteMonth);
+}else{
+    console.log("there is no such data");
+}
+*/
+
+//finding the sqrt of array========================================
+
+// let array1 = [1,4,9,16,25,36];
+// //newarray >9
+// let newArr = array1.map((currElem, index, array) => {
+//    return currElem > 9;
+// });
+// console.log(array1);
+// console.log(newArr);
+/*
+let array1 = [1,4,9,16,25,36];
+let newArr = array1.map((currElem, index, array) =>{
+    return ` index on = ${index} and the value is ${currElem} belong to ${array}`
+
+});
+console.log(newArr);
+*/
+
+//find the square root
+
+//let arr = [25, 36, 49, 64,81];
+
+// let arrSqur = arr.map((currElem) =>{
+//     return Math.sqrt(currElem);
+// })
+//let arrSqur = arr.map((currElem) => Math.sqrt(currElem));
+//console.log(arrSqur);
+
+// multiply array element by 2 and element >10 ?================
+let arr1 = [3,4,5,6,7,8];
+let arr1New = arr1.map((currElem) =>{
+    return currElem *2;
+}).filter((currElem) =>{
+    return currElem > 10;
+})
+console.log(arr1New);
