@@ -5,10 +5,26 @@
 <h2>JavaScript Arrays</h2>
 
 <p>The best way to loop through an array is using a standard for loop:</p>
-
+<button onclick="myFunction()"> try now</button>
+<p id = "date"></p>
 <p id="demo"></p>
 
 <script>
+  // function myFunction(){
+  //   let t = new Date();
+  //   t.setHours(5);
+  //   document.getElementById("demo").innerHTML = t;
+  // } 
+  let d = new Date().toLocaleDateString();
+  document.getElementById("date").innerHTML = d;
+
+  (function() {
+    setInterval(() => {
+      var t = new Date().toLocaleTimeString();
+      document.getElementById("demo").innerHTML = t;
+    },1000)
+  })();
+
 </script>
 
 </body>

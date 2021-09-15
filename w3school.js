@@ -285,6 +285,7 @@ console.log(newArr);
 //console.log(arrSqur);
 
 // multiply array element by 2 and element >10 ?================
+/*
 let arr1 = [3,4,5,6,7,8];
 let arr1New = arr1.map((currElem) => currElem *2).filter((currElem) => currElem > 10)
 .reduce((accumulator,currElem) => accumulator += currElem);
@@ -307,5 +308,62 @@ const arr2 =[
 let flatArr = arr2.reduce((acumu, curVal) =>{
     return acumu.concat(curVal);
 });
-console.log(flatArr);
+console.log(flatArr)
+*/
 
+// All string property
+
+let fruits = 'i am inter est apple orange';
+//let solve = fruits.slice(5, -2);
+//let res = fruits.substring(5, -3);// - sign used for begings 0 position
+let res = fruits.substr(-6);
+console.log(res); 
+
+ let str = "HELLO WORLD";
+ console.log(str.charCodeAt(9));
+ let fName = "Hossain ahmed";
+ console.log(fName.toUpperCase());
+ let lName = "fakir";
+ console.log(fName + lName);
+ console.log(fName.concat( " " , lName));
+ console.log(`${fName} ${lName}`);
+
+let str1 = "      hello world        ";
+console.log(str1.trim());
+
+// string can be converted to array with the split() method========= 
+ let txt = "a, s,d, f,g,h,";
+ console.log(txt.split(","));
+ console.log(txt.split(" "));
+ console.log(txt.split("|"));
+
+ //date & time using new Date() method
+ let curDate = new Date();
+ console.log(curDate);
+
+ console.log(new Date());
+ console.log(new Date().toLocaleString());
+ console.log(new Date().toString());
+
+ console.log(Date.now());
+
+ var d = new Date(2021, 0);
+ console.log(d.toLocaleString());
+
+ let d1 = new Date("october 13, 2021 22:30:20");
+ console.log(d1.toLocaleString());
+
+ let d2 = new Date(1631711694239);
+ console.log(d2.toLocaleString());
+
+ // Date Methods
+ const cDate = new Date();
+
+console.log(cDate.toLocaleString());
+console.log(cDate.getFullYear());
+console.log(cDate.getMonth());
+console.log(curDate.getDate());
+console.log(cDate.getDay());
+
+const curTime = new Date();
+console.log(curTime.setHours());
