@@ -286,9 +286,26 @@ console.log(newArr);
 
 // multiply array element by 2 and element >10 ?================
 let arr1 = [3,4,5,6,7,8];
-let arr1New = arr1.map((currElem) =>{
-    return currElem *2;
-}).filter((currElem) =>{
-    return currElem > 10;
-})
+let arr1New = arr1.map((currElem) => currElem *2).filter((currElem) => currElem > 10)
+.reduce((accumulator,currElem) => accumulator += currElem);
 console.log(arr1New);
+ // use of reduce function======================
+ 
+let arr = [6,5,4];
+let arrAcu = arr.reduce((accum,curEle, index, array)  =>{
+    return accum += curEle;
+},7)
+console.log(arrAcu);
+
+// How to flatter an array ?
+const arr2 =[
+    ["zone1","zone2"],
+    ["zone3","zone3"],
+    ["zone5","zone6"],
+    ["zone7", ["zone1","zone2"]]
+];
+let flatArr = arr2.reduce((acumu, curVal) =>{
+    return acumu.concat(curVal);
+});
+console.log(flatArr);
+
