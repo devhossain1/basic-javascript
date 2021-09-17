@@ -2,28 +2,91 @@
 <html>
 <body>
 
-<h2>JavaScript Arrays</h2>
+  <div class="main-div">
+      <div class="child-one">
+        <p>I am child one</p>
+      </div>
+      <div class="child-two">
+        <p>I am child one</p>
+      </div>
+      <div class="child-three">
+        <p>I am child one</p>
+      </div>
+
+  </div>
+
+<h2 class="para">JavaScript Arrays</h2>
+<p class="para">this is anather part</p>
 
 <p>The best way to loop through an array is using a standard for loop:</p>
+<h1 id ="heading">change the content of the h1</h1>
+<button onclick="changeContent()">change it</button>
+<br>
+<form action="">
+  <label for="">male</label>
+  <input type="radio" name="gender" id="">
+  <label for="">female</label>
+  <input type="radio" name="gender" id="">
+  <label for="">male female </label>
+  <input type="radio" name="gender" id="">
+
+</form>
+<br>
+<ul>
+  <li id="list1">PHP</li>  
+  <li>HTML</li>
+  <li class="list2">CSS</li>
+  <li class="list3">JavaScript</li>
+
+</ul>
+
+<br>
+<button class="button_su" onclick = "goBack()">
+  Go Back</button>
+
+<!--
 <button onclick="myFunction()"> try now</button>
 <p id = "date"></p>
 <p id="demo"></p>
+-->
 
 <script>
+const changeContent =()=>{
+  //document.getElementById('heading').innerHTML = "Hi this is the change";
+ const headingChange = document.getElementById('heading');
+ headingChange.innerHTML = "welcome to the new year";
+ //console.log(document.getElementsByClassName("para"));
+ //console.log(document.getElementsByTagName('p'));
+ //console.log(document.getElementsByName('gender'));
+document.querySelector('#heading').innerHTML = 'this is again change';
+//console.log(document.querySelectorAll('.para'));
+
+
+}
+console.log(document.getElementById('list1').innerHTML);
+console.log(document.querySelector('ul li.list2').innerHTML);
+console.log(document.querySelector(' li.list2').innerHTML);
+console.log(document.querySelector('.list2').innerHTML);
+
+
+function goBack() {
+  window.history.back();
+}
+
   // function myFunction(){
   //   let t = new Date();
   //   t.setHours(5);
   //   document.getElementById("demo").innerHTML = t;
   // } 
-  let d = new Date().toLocaleDateString();
-  document.getElementById("date").innerHTML = d;
+  // let d = new Date().toLocaleDateString();
+  // document.getElementById("date").innerHTML = d;
 
-  (function() {
-    setInterval(() => {
-      var t = new Date().toLocaleTimeString();
-      document.getElementById("demo").innerHTML = t;
-    },1000)
-  })();
+  // (function() {
+  //   setInterval(() => {
+  //     var t = new Date().toLocaleTimeString();
+  //     document.getElementById("demo").innerHTML = t;
+  //   },1000)
+  // })();
 
 </script>
 

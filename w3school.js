@@ -312,7 +312,7 @@ console.log(flatArr)
 */
 
 // All string property
-
+/*
 let fruits = 'i am inter est apple orange';
 //let solve = fruits.slice(5, -2);
 //let res = fruits.substring(5, -3);// - sign used for begings 0 position
@@ -367,3 +367,10 @@ console.log(cDate.getDay());
 
 const curTime = new Date();
 console.log(curTime.setHours());
+*/
+console.log(Math.floor(Math.random()*10));
+
+alert(location.href);
+if(confirm("Do you want to visit my porfolio website")){
+    location.href = "https//devhossain.com";
+}
