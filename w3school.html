@@ -1,94 +1,112 @@
 <!DOCTYPE html>
 <html>
 <body>
+  <div class="button_container">
+    <div class="button_su">
+      <span class="su_button_circle"></span>
+      <a href="#" class="button_su_inner" onclick="alert('I am awesome but no one use me')">
+        <span class="button_text_containe">
+          simple inline alert();
+        </span>
+      </a>   
+    </div>
 
-  <div class="main-div">
-      <div class="child-one">
-        <p>I am child one</p>
+    <div class="button_su">
+      <span class="su_button_circle"></span>
+      <a href="#" class="button_su_inner" onclick="callingFunction()">
+        <span class="button_text_containe">
+          by calling a function;
+        </span>
+      </a>   
+    </div>
+
+    <div class="button_su">
+      <span class="su_button_circle"></span>
+      <a href="#" class="button_su_inner" id="thirdWay">
+        <span class="button_text_containe">
+          inline events.
+        </span>
+      </a>   
+    </div>
+
+    <div class="button_su">
+      <span class="su_button_circle"></span>
+      <a href="#" class="button_su_inner" id="fourtWay">
+        <span class="button_text_containe">
+          event listener 
+        </span>
+      </a>   
+    </div>
+    
+    <p id="myp" onmouseDown="mouseDown()" onmouseUp="mouseUp()">
+      Lorem Ipsum is simply dummy text of the printing and
+       typesetting industry. Lorem Ipsum has been the industry's 
+       standard dummy text ever since the 1500s, when an unknown 
+       printer took a galley of type and scrambled it to make a  
+       type specimen book.
+
+    </p>
+    <br>
+
+    <div class="main_div">
+      <div id="box" style="width: 200px; height: 200px; background-color: tomato;">
+         Hello
       </div>
-      <div class="child-two">
-        <p>I am child one</p>
-      </div>
-      <div class="child-three">
-        <p>I am child one</p>
-      </div>
+    </div>
 
-  </div>
+  <script>
+  const mEnter = document.getElementById('box');
 
-<h2 class="para">JavaScript Arrays</h2>
-<p class="para">this is anather part</p>
+  mEnter.addEventListener('mouseenter', () =>{
+    mEnter.style.backgroundColor = "yellow";
+    console.log("hello bro, mouse inter")
+  });
 
-<p>The best way to loop through an array is using a standard for loop:</p>
-<h1 id ="heading">change the content of the h1</h1>
-<button onclick="changeContent()">change it</button>
-<br>
-<form action="">
-  <label for="">male</label>
-  <input type="radio" name="gender" id="">
-  <label for="">female</label>
-  <input type="radio" name="gender" id="">
-  <label for="">male female </label>
-  <input type="radio" name="gender" id="">
+  mEnter.addEventListener('mouseleave', () => {
+    console.log("hello bro mouse leave");
+    mEnter.style.backgroundColor = "black";
+  });
 
-</form>
-<br>
-<ul>
-  <li id="list1">PHP</li>  
-  <li>HTML</li>
-  <li class="list2">CSS</li>
-  <li class="list3">JavaScript</li>
-
-</ul>
-
-<br>
-<button class="button_su" onclick = "goBack()">
-  Go Back</button>
-
-<!--
-<button onclick="myFunction()"> try now</button>
-<p id = "date"></p>
-<p id="demo"></p>
--->
-
-<script>
-const changeContent =()=>{
-  //document.getElementById('heading').innerHTML = "Hi this is the change";
- const headingChange = document.getElementById('heading');
- headingChange.innerHTML = "welcome to the new year";
- //console.log(document.getElementsByClassName("para"));
- //console.log(document.getElementsByTagName('p'));
- //console.log(document.getElementsByName('gender'));
-document.querySelector('#heading').innerHTML = 'this is again change';
-//console.log(document.querySelectorAll('.para'));
+  // function mouseDown(){
+  //   document.getElementById('myp').style.color ="red";
+  // }
+  // function mouseUp(){
+  //   document.getElementById('myp').style.color ="blue";
+  // }
 
 
-}
-console.log(document.getElementById('list1').innerHTML);
-console.log(document.querySelector('ul li.list2').innerHTML);
-console.log(document.querySelector(' li.list2').innerHTML);
-console.log(document.querySelector('.list2').innerHTML);
+    //2nd way of writing function
+    const callingFunction = () =>{
+      alert('common way of writing function');
+    }
 
+    //3rd way of writing function
+    const thirdWay = document.getElementById('thirdWay');
+    // thirdWay.onclick =function(){
+    //   console.log('most common way of writing function'); 
+    // }
 
-function goBack() {
-  window.history.back();
-}
+    const checkEvent = () =>{
+      alert('most common way of writing function');
+      console.log(event);
+      console.log(event.target);
+      console.log(event.type);
 
-  // function myFunction(){
-  //   let t = new Date();
-  //   t.setHours(5);
-  //   document.getElementById("demo").innerHTML = t;
-  // } 
-  // let d = new Date().toLocaleDateString();
-  // document.getElementById("date").innerHTML = d;
+    }
+    thirdWay.addEventListener('click',checkEvent);
+  
+    //4th day fuction write 
+    const fourtWay = document.querySelector('#fourtWay');
 
-  // (function() {
-  //   setInterval(() => {
-  //     var t = new Date().toLocaleTimeString();
-  //     document.getElementById("demo").innerHTML = t;
-  //   },1000)
-  // })();
+    fourtWay.addEventListener('click', () => {
+      alert('I love this way of writing function');
+    })
+    fourtWay.addEventListener('click', () => {
+      console.log('I love this way of writing function');
+    })
 
-</script>
+  </script>
 
+ 
 </body>
 </html>
