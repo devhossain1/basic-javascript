@@ -1,64 +1,60 @@
 <!DOCTYPE html>
 <html>
 <body>
- <div class="main-div">
-   <div>
-     <p>A function is trigger when the user is pressing a key in the input field </p>
-     <br>
-     <input type="text"  class="effect-1" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()">
-     <br>
-     <p id="keys"></p>
-   </div>
-   <br>
-   <div>
-     <label for="">your name</label>
-     <input type="text" name="" id="ice">
-     <br>
-     <label for="">choose an icecream flavour
-       <select name="iceCreams" id="iceCreams" onchange="selectElement()">
-         <option value="">select one</option>
-         <option value="chocklates">chocklates</option>
-         <option value="vardine">vardine</option>
-         <option value="vanilla">vanilla</option>
-       </select>
-     </label>
-     <br>
-     <div id="result"></div>
 
-   </div>
- </div>
+  <!-- <div class="main-div">
+    <div>
+      <p>do you want to show my name? </p>
+      <p id="showMyName"> </p>
+      <br>
+      <button id="btn"> Click Here </button>
+    </div>
+  </div> -->
+  <div class="main">
+    <div>
+      <p>can you stop me when I reach at 5 .</p>
+      <br>
+      <button id="btn"> click Here </button>
+      <button id="btn1"> stop </button>
+    </div>
+  </div>
+
 
 
   <script>
-    // const selectElement = () =>{
-    //   const inputChage = document.getElementById('ice').value;
-    //   const iceCreams = document.getElementById('iceCreams').value;
-    //   const result = document.getElementById('result');
-    //   result.innerHTML = `Mr. ${inputChage} choose ${iceCreams} icecreams flavour`;
+
+    const stopNum = document.querySelector('p');
+    const btn = document.querySelector('#btn');
+    const btn1 = document.querySelector('#btn1');
+    let num=0;
+    let timeRef;
+
+    const showMyNumber = () =>{
+      stopNum.innerHTML="loading...";
+
+      timeRef=setInterval(() =>{
+       stopNum.innerHTML = ` ${num}`;
+       num++;
+      },1000)
+    }
+    btn.addEventListener('click', showMyNumber);
+    
+    btn1.addEventListener("click", () =>{
+      clearInterval(timeRef);
+    })
+
+    // const myName = document.querySelector('#showMyName');
+    // const btn = document.querySelector('#btn');
+
+    // const showMyName =() =>{
+    //   myName.innerHTML= 'loading...' ;
+    //   setTimeout(() => {
+    //     myName.innerHTML= "hossain ahmed"
+    //   },1000)
     // }
-    const iceCreams = document.getElementById('iceCreams')
-    
-    iceCreams.addEventListener('change', () =>{
-      const inputChage = document.getElementById('ice').value;
-      const iceCreams = document.getElementById('iceCreams').value;
-      const result = document.getElementById('result');
-      result.innerHTML = `Mr. ${inputChage} choose ${iceCreams} icecreams flavour`;
-      
-    });
-    
 
+    // btn.addEventListener('click', showMyName);
 
-  // const keyPress =() =>{
-  //   document.getElementById('keys').innerHTML = ` you press ${event.key} and its code is ${event.code}`;
-  //  }
-  /*
-  const keyDown =() =>{
-    document.getElementById('keys').innerHTML = `key is down`;
-  }
-  const keyUp =() =>{
-    document.getElementById('keys').innerHTML = `key is Up`;
-  }
-  */
   </script>
 
  
