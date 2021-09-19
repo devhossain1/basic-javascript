@@ -1,110 +1,64 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <div class="button_container">
-    <div class="button_su">
-      <span class="su_button_circle"></span>
-      <a href="#" class="button_su_inner" onclick="alert('I am awesome but no one use me')">
-        <span class="button_text_containe">
-          simple inline alert();
-        </span>
-      </a>   
-    </div>
+ <div class="main-div">
+   <div>
+     <p>A function is trigger when the user is pressing a key in the input field </p>
+     <br>
+     <input type="text"  class="effect-1" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()">
+     <br>
+     <p id="keys"></p>
+   </div>
+   <br>
+   <div>
+     <label for="">your name</label>
+     <input type="text" name="" id="ice">
+     <br>
+     <label for="">choose an icecream flavour
+       <select name="iceCreams" id="iceCreams" onchange="selectElement()">
+         <option value="">select one</option>
+         <option value="chocklates">chocklates</option>
+         <option value="vardine">vardine</option>
+         <option value="vanilla">vanilla</option>
+       </select>
+     </label>
+     <br>
+     <div id="result"></div>
 
-    <div class="button_su">
-      <span class="su_button_circle"></span>
-      <a href="#" class="button_su_inner" onclick="callingFunction()">
-        <span class="button_text_containe">
-          by calling a function;
-        </span>
-      </a>   
-    </div>
+   </div>
+ </div>
 
-    <div class="button_su">
-      <span class="su_button_circle"></span>
-      <a href="#" class="button_su_inner" id="thirdWay">
-        <span class="button_text_containe">
-          inline events.
-        </span>
-      </a>   
-    </div>
-
-    <div class="button_su">
-      <span class="su_button_circle"></span>
-      <a href="#" class="button_su_inner" id="fourtWay">
-        <span class="button_text_containe">
-          event listener 
-        </span>
-      </a>   
-    </div>
-    
-    <p id="myp" onmouseDown="mouseDown()" onmouseUp="mouseUp()">
-      Lorem Ipsum is simply dummy text of the printing and
-       typesetting industry. Lorem Ipsum has been the industry's 
-       standard dummy text ever since the 1500s, when an unknown 
-       printer took a galley of type and scrambled it to make a  
-       type specimen book.
-
-    </p>
-    <br>
-
-    <div class="main_div">
-      <div id="box" style="width: 200px; height: 200px; background-color: tomato;">
-         Hello
-      </div>
-    </div>
 
   <script>
-  const mEnter = document.getElementById('box');
-
-  mEnter.addEventListener('mouseenter', () =>{
-    mEnter.style.backgroundColor = "yellow";
-    console.log("hello bro, mouse inter")
-  });
-
-  mEnter.addEventListener('mouseleave', () => {
-    console.log("hello bro mouse leave");
-    mEnter.style.backgroundColor = "black";
-  });
-
-  // function mouseDown(){
-  //   document.getElementById('myp').style.color ="red";
-  // }
-  // function mouseUp(){
-  //   document.getElementById('myp').style.color ="blue";
-  // }
-
-
-    //2nd way of writing function
-    const callingFunction = () =>{
-      alert('common way of writing function');
-    }
-
-    //3rd way of writing function
-    const thirdWay = document.getElementById('thirdWay');
-    // thirdWay.onclick =function(){
-    //   console.log('most common way of writing function'); 
+    // const selectElement = () =>{
+    //   const inputChage = document.getElementById('ice').value;
+    //   const iceCreams = document.getElementById('iceCreams').value;
+    //   const result = document.getElementById('result');
+    //   result.innerHTML = `Mr. ${inputChage} choose ${iceCreams} icecreams flavour`;
     // }
+    const iceCreams = document.getElementById('iceCreams')
+    
+    iceCreams.addEventListener('change', () =>{
+      const inputChage = document.getElementById('ice').value;
+      const iceCreams = document.getElementById('iceCreams').value;
+      const result = document.getElementById('result');
+      result.innerHTML = `Mr. ${inputChage} choose ${iceCreams} icecreams flavour`;
+      
+    });
+    
 
-    const checkEvent = () =>{
-      alert('most common way of writing function');
-      console.log(event);
-      console.log(event.target);
-      console.log(event.type);
 
-    }
-    thirdWay.addEventListener('click',checkEvent);
-  
-    //4th day fuction write 
-    const fourtWay = document.querySelector('#fourtWay');
-
-    fourtWay.addEventListener('click', () => {
-      alert('I love this way of writing function');
-    })
-    fourtWay.addEventListener('click', () => {
-      console.log('I love this way of writing function');
-    })
-
+  // const keyPress =() =>{
+  //   document.getElementById('keys').innerHTML = ` you press ${event.key} and its code is ${event.code}`;
+  //  }
+  /*
+  const keyDown =() =>{
+    document.getElementById('keys').innerHTML = `key is down`;
+  }
+  const keyUp =() =>{
+    document.getElementById('keys').innerHTML = `key is Up`;
+  }
+  */
   </script>
 
  
