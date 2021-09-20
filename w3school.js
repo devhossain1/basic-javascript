@@ -368,9 +368,70 @@ console.log(cDate.getDay());
 const curTime = new Date();
 console.log(curTime.setHours());
 */
-console.log(Math.floor(Math.random()*10));
+// console.log(Math.floor(Math.random()*10));
 
-alert(location.href);
-if(confirm("Do you want to visit my porfolio website")){
-    location.href = "https//devhossain.com";
+// alert(location.href);
+// if(confirm("Do you want to visit my porfolio website")){
+//     location.href = "https//devhossain.com";
+// }
+/*
+let biodata = {
+    myName:{
+     fName:"hossain",
+     lName:"ahmed"
+    },
+    myAge:28,
+    getdata (){
+        console.log(`my name is ${biodata.myName.fName} and my age is ${biodata.myAge}`);
+
+    }
 }
+biodata.getdata();
+*/
+// var myNames = 'hossain';
+// function myName (){
+//     console.log( this.myNames);
+// }
+// myName ();
+
+// const obj = {
+//     myAge:28,
+//     myName(){
+//         console.log(this.myAge);
+//     }
+// }
+// obj.myName();
+// using flat arrow function in obj
+// const obj = {
+//     myAge:28,
+//     myName:() =>{
+//         console.log(this);
+//     }
+// }
+// obj.myName();
+
+// let myInform ={
+//     myName: {
+//         fName:'hossain'
+//     },
+//     myAge:28;
+//     getInform (){
+//         console.log(`myname is ${this.myName.fName} and age is ${this.myAge}`);
+//     }
+// }
+// myInform.getInform();
+
+// const myBioData = ['hossain', 'ahmed', 28];
+
+// let [fNam,lNam,age] =  myBioData;
+// console.log(lNam);
+
+// let [fNam,lNam,age,myDegree='MSc'] =  myBioData;
+// console.log(myDegree);
+const myBioData = {
+    fName:'hossain',
+    lName:'ahmed',
+    age: 28
+}
+let {fName,lName,age,myDegree='MSc'} =  myBioData;
+console.log(myDegree);
