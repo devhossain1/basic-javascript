@@ -428,10 +428,58 @@ biodata.getdata();
 
 // let [fNam,lNam,age,myDegree='MSc'] =  myBioData;
 // console.log(myDegree);
-const myBioData = {
-    fName:'hossain',
-    lName:'ahmed',
-    age: 28
-}
-let {fName,lName,age,myDegree='MSc'} =  myBioData;
-console.log(myDegree);
+// const myBioData = {
+//     fName:'hossain',
+//     lName:'ahmed',
+//     age: 28
+// }
+// let {fName,lName,age,myDegree='MSc'} =  myBioData; 
+// console.log(myDegree);
+// let myName = 'hossain';
+// const myBio = {
+//     [myName]:'hello how are you?',
+//     [26+4] : "is may age"
+// }
+// console.log(myBio);
+
+// let myName = "hossain";
+// let myAge = 28;
+// const myBio = {myName,myAge}
+// console.log(myBio);
+ let color = ['red', 'blue', 'black'];
+ let myColor = ['red', 'blue', 'black', 'pink', 'green'];
+ let myColors =[...color, 'pink', 'green'];
+//console.log(myColors);
+console.log(color.includes('yellow'));
+
+let test = 'hossain';
+console.log(test.padStart(7));
+console.log(test.padStart(10));
+
+const person = {name:'hossain', age:28}
+const sPerson = {...person}
+//console.log(Object.values(person));
+//console.log(Object.entries(person));
+const arrObj = Object.entries(person)
+console.log(Object.fromEntries(arrObj));
+
+const arr = [
+    ['zone1', 'zone2'],
+    ['zone3', 'zone4'],
+    ['zone5', ['zone6', ['zone7', 'zone8']]]
+];
+// let flatArr = arr.reduce((accum, currInterval) =>{
+//     return accum.concat(currInterval);
+// })
+console.log(arr.flat(Infinity));
+
+let oldNum =Number.MAX_SAFE_INTEGER;
+//console.log(oldNum);
+// console.log(9007199254740991n + 12n)
+const newNum = 9007199254740991n + 12n;
+console.log(newNum);
+console.log(typeof newNum);
+
+"use strict";
+x=14;
+console.log(x);
