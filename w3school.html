@@ -1,60 +1,44 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      .parentDiv{
+        width: 400px;
+        height: 400px;
+        background-color: tomato;
+        display: flex;
+        align-items: center;
+        
+      }
+      .childDiv{
+        width: 200px;
+        height: 200px;
+        background-color: yellowgreen;
+        
+      }
+    </style>
+  </head>
 <body>
-
-  <!-- <div class="main-div">
-    <div>
-      <p>do you want to show my name? </p>
-      <p id="showMyName"> </p>
-      <br>
-      <button id="btn"> Click Here </button>
-    </div>
-  </div> -->
-  <div class="main">
-    <div>
-      <p>can you stop me when I reach at 5 .</p>
-      <br>
-      <button id="btn"> click Here </button>
-      <button id="btn1"> stop </button>
-    </div>
-  </div>
-
-
+<div class="parentDiv" id="parentId">
+  <div class="childDiv" id="childId"></div>
+</div>
+ 
 
   <script>
+const parentId = document.getElementById('parentId');
+const childId = document.getElementById('childId');
 
-    const stopNum = document.querySelector('p');
-    const btn = document.querySelector('#btn');
-    const btn1 = document.querySelector('#btn1');
-    let num=0;
-    let timeRef;
+const parentCall= () =>{
+  alert('parent call Div');
 
-    const showMyNumber = () =>{
-      stopNum.innerHTML="loading...";
-
-      timeRef=setInterval(() =>{
-       stopNum.innerHTML = ` ${num}`;
-       num++;
-      },1000)
-    }
-    btn.addEventListener('click', showMyNumber);
-    
-    btn1.addEventListener("click", () =>{
-      clearInterval(timeRef);
-    })
-
-    // const myName = document.querySelector('#showMyName');
-    // const btn = document.querySelector('#btn');
-
-    // const showMyName =() =>{
-    //   myName.innerHTML= 'loading...' ;
-    //   setTimeout(() => {
-    //     myName.innerHTML= "hossain ahmed"
-    //   },1000)
-    // }
-
-    // btn.addEventListener('click', showMyName);
-
+}
+const childCall =() =>{
+  alert('child call Div');
+  //event.stopPropagation();
+}
+parentId.addEventListener('click', parentCall, false);
+childId.addEventListener('click', childCall, false);
+ 
   </script>
 
  

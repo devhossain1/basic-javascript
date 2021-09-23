@@ -88,11 +88,11 @@ function dummy(m,n, ...params){
 dummy(1,3, 6, 7);
 dummy(1,5, 4, 8,9,3);
 dummy(1,3, 6, 7);
-*/
+*/unction doSomething(){
+ 
 
 var i = 35;
-function doSomething(){
-        let i = 23;
+f       let i = 23;
     if(true){
       let i = 10;
 
