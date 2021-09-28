@@ -485,44 +485,90 @@ biodata.getdata();
 // console.log(x);
 
 //creating acalculator =================================
-const add = (a,b) =>{
-  return a+b;
-}
-//console.log(add(5,4));
-const subs = (a,b) =>{
-    return Math.abs(a-b);
-}
-const mult = (a,b) =>{
-    return a*b;
-}
-const calculator = (num1, num2, operator) =>{
-   return operator(num1, num2);
-}
-console.log(calculator(5,3, add));
+// const add = (a,b) =>{
+//   return a+b;
+// }
+// //console.log(add(5,4));
+// const subs = (a,b) =>{
+//     return Math.abs(a-b);
+// }
+// const mult = (a,b) =>{
+//     return a*b;
+// }
+// const calculator = (num1, num2, operator) =>{
+//    return operator(num1, num2);
+// }
+// console.log(calculator(5,3, add));
 
-//lexical scoping===============================================
-let a ="hello";
-const first = () =>{
-    let b = " how are you?";
+// //lexical scoping===============================================
+// let a ="hello";
+// const first = () =>{
+//     let b = " how are you?";
 
-    const second =() =>{
-        let c =" i am fine thanks";
-        console.log(a+b+c);
-    }
-    second();
-    //console.log(a+b+c);
-}
-first();
+//     const second =() =>{
+//         let c =" i am fine thanks";
+//         console.log(a+b+c);
+//     }
+//     second();
+//     //console.log(a+b+c);
+// }
+// first();
 
-//closers==============================================
-const outerFun = (a) =>{
-    let b = 10;
-     const innerFun = () =>{
-         let sum = a+b;
-         console.log(`the sum of the two num is ${sum}`);
-     }
-     //innerFun();
-     return innerFun;
-}
-let closerCheck = outerFun(5);
-console.dir(closerCheck);
+// //closures==============================================
+// const outerFun = (a) =>{
+//     let b = 10;
+//      const innerFun = () =>{
+//          let sum = a+b;
+//          console.log(`the sum of the two num is ${sum}`);
+//      }
+//      //innerFun();
+//      return innerFun;
+// }
+// let closerCheck = outerFun(5);
+// console.dir(closerCheck);
+
+//syncronize ========================================
+// const fun2 = () =>{
+//     console.log('fun2 is called');
+// }
+// const fun1= () =>{
+//     console.log('fun1 is called');
+//     fun2();
+//     console.log('fun 2 is called again');
+// }
+// fun1();
+
+//asyncronize=================================
+
+// const fun2 = () =>{
+//     setTimeout(() =>{
+//        console.log('fun 2 is called');
+//     },3000);   
+// }
+
+// const fun1 = () =>{
+//     console.log('fun1 is called');
+//     fun2();
+//     console.log('fun 2 is called again');
+// }
+// fun1();
+// //curring===================================
+// function sum(num1){
+//     console.log(num1);
+//     return function(num2){
+//         console.log(num1,num2);
+//         return function(num3){
+//             console.log(num1,num2,num3)
+//         }
+//     }
+// }
+// sum(5)(2)(8)
+
+//const sum =(num1) =>(num2) => (num3) => console.log(num1+num2+num3);
+//sum(5)(8)(12);
+var my_object = {key_1:"hello", key_2:true, key_3:5};
+var object_as_string = JSON.stringify(my_object);
+console.log(object_as_string);
+console.log(typeof(object_as_string));
+var jason =JSON.parse(object_as_string);
+console.log(jason);
