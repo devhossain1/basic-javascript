@@ -572,3 +572,4 @@ console.log(object_as_string);
 console.log(typeof(object_as_string));
 var jason =JSON.parse(object_as_string);
 console.log(jason);
+
