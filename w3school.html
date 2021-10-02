@@ -1,77 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      #container{
-        background-color: greenyellow;
-        text-align: center;
-        width: 500px;
-        position: center;
-      
-
-      }
-    
-    </style>
-  </head>
 <body>
 
-  <div id="container">
-    <h3>best jokes to make your day</h3>
-    <div id="joke" class="joke">awesome joke is made...</div>
-    <button id="jokeBtn" class="btn">Next button</button>
+<h2>JavaScript Array Sort</h2>
+<p>Click the button to sort the array in descending order.</p>
 
-  </div>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
 
-  <script>
-    //GET https://icanhazdadjoke.com
-    const jokes = document.querySelector('#joke');
-    const jokeBtn = document.querySelector('#jokeBtn');
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
 
-    // const generateJokes = () =>{
-    //    const setHeader = {
-    //      headers:{
-    //        Accept : "application/json"
-    //      }
-    //    }
+const myFunction =() => {
+  points.sort((a, b)=>b - a);
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
 
-
-    //   fetch('https://icanhazdadjoke.com', setHeader)
-    //   .then((res) => res.json() )
-    //   .then((data) =>{
-    //     jokes.innerHTML = data.joke;
-    //   })
-    //   .catch((error) =>{
-    //     console.log(error);
-    //   })
-
-    // }
-
-    // jokeBtn.addEventListener('click', generateJokes);
-    // generateJokes();
-    
-    const generateJokes = async () =>{
-       const setHeader = {
-         headers:{
-           Accept : "application/json"
-         }
-       }
-
-
-      try{
-        const res = await fetch('https://icanhazdadjoke.com', setHeader)
-      const data = await res.json();
-      jokes.innerHTML = data.joke;
-      }catch(err){
-        console.log(`this is the ${err}`);
-      }
-
-    }
-
-    jokeBtn.addEventListener('click', generateJokes);
-    generateJokes();
-
-  </script>
-
- 
 </body>
 </html>
