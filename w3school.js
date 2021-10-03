@@ -1,48 +1,74 @@
+/*
+ let digit =prompt("enter the number...")
 
-const mathRnd =(min, max) => Math.floor(Math.random() * (max-min +1))+min;
-
-console.log(mathRnd(1,6));
-
-const students = ["Sumit", "Akash", "Dulal", "Onik"];
-console.log(students.sort());
-console.log(students);
-
-const points =[9,3,1,12,34,5,8];
-let number = points.sort((a,b)=> a-b);
-console.log(number);
-
-function leapYear(year){
-    if(year%400===0 || (year % 4 === 0 && year % 100 !==0)){
-        console.log(`${year} is a leap year`);
-    }else{
-        console.log(`${year} is not a leap year`);
-    }
-
-}
-leapYear(2016);
-
-//how to find the number of vowel in a sentense
-
-const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O","U"];
-function countVowels(sentence){
-    let count = 0;
-    const letters = Array.from(sentence);
-
-    letters.forEach(function(value) {
-        if(vowels.includes(value)){
-            count++;
-        }
-    });
-    return count;
+switch(digit){
+    case "0":
+      console.log("zero");
+      break;
+    case "1":
+        console.log("one");
+        break;
+    case "2":
+        console.log("two");
+        break;
+    case "3":
+        console.log("three");
+        break;
+    default:
+    console.log("others");
 
 }
-console.log(countVowels("I love bangladesh"));
+*/
+/*
+let letters = prompt("inete number")
+ let letter = letters.toLowerCase()
+ switch(letter){
+    case "a":
+    case "e":
+    case "i":
+    case "o":
+        console.log("vowels");
+        break;
+    default:
+        console.log(consonents);    
+ }
+ */
+/*
+ let text;
+ switch (new Date().getDay()) {
+   case 0:
+   case 5:
+     text = "Soon it is Weekend";
+     break;
+   case 4:
+   case 6:
+     text = "It is Weekend";
+     break;
+   default:
+     text = "Looking forward to the Weekend";
+ }
+ document.getElementById("demo").innerHTML = text;
+*/
 
-const numbers = [1, 4, 5, 5, 6, 7, 8, 7, 9, 4, 9];
-const duplicates = numbers.filter(function(value, index, array){
-    return array.indexOf(value) !== index;
-});
-let sequence = duplicates.sort((a,b) => a-b);
-console.log(sequence);
+const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
 
-console.log(Boolean(10>8));
+let i=0, text="", len=cars.length;
+for ( ; i <len; i++) {
+  text +="this is the car name = "+ cars[i] + "</br> ";
+} 
+//console.log(text);
+document.getElementById("demo").innerHTML = text;
+
+let count="";
+for(let i=1; i<=10; i++){
+   count += "this is number "+ i+ "</br>"; 
+}
+document.getElementById("num").innerHTML = count;
+
+let x=5;
+let num1 = "";
+for(let x=0; x<10; x++){
+    num1 += "loop scope = " + x + " </br>";
+    document.getElementById('num1').innerHTML = num1;
+}
+console.log(x);
