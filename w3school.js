@@ -1,74 +1,71 @@
-/*
- let digit =prompt("enter the number...")
+// const person = {fName:"john", lName:"Doe", age:"26"};
+// let text="";
+// for(let x in person){
+//     text += person[x] + "</br>"
+// }
+//document.getElementById('demo').innerHTML = text;
 
-switch(digit){
-    case "0":
-      console.log("zero");
-      break;
-    case "1":
-        console.log("one");
-        break;
-    case "2":
-        console.log("two");
-        break;
-    case "3":
-        console.log("three");
-        break;
-    default:
-    console.log("others");
+// let a = ["bmw", "volvo", "honda","nisan" ];
+// let car= "";
+// for(let x of a){
+//     car += x + " ";
+// }
+// console.log(car);
 
+// let cars = ["bmw", "volvo", "honda","nisan" ];
+// let text ="";
+// let i = 0;
+
+// while(cars[i]){
+//     text += "the number is  " + cars[i]+ " </br> ";
+//     i++;
+//  }
+// document.getElementById('num').innerHTML = text;
+
+let text="";
+for(let i=0; i<6; i++){
+    if(i==3){break}
+  text += "num = "+ i+ " ";
 }
-*/
-/*
-let letters = prompt("inete number")
- let letter = letters.toLowerCase()
- switch(letter){
-    case "a":
-    case "e":
-    case "i":
-    case "o":
-        console.log("vowels");
-        break;
-    default:
-        console.log(consonents);    
- }
- */
-/*
- let text;
- switch (new Date().getDay()) {
-   case 0:
-   case 5:
-     text = "Soon it is Weekend";
-     break;
-   case 4:
-   case 6:
-     text = "It is Weekend";
-     break;
-   default:
-     text = "Looking forward to the Weekend";
- }
- document.getElementById("demo").innerHTML = text;
-*/
+console.log(text);
 
-const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
 
-let i=0, text="", len=cars.length;
-for ( ; i <len; i++) {
-  text +="this is the car name = "+ cars[i] + "</br> ";
-} 
-//console.log(text);
-document.getElementById("demo").innerHTML = text;
+const letters = new Set();
 
-let count="";
-for(let i=1; i<=10; i++){
-   count += "this is number "+ i+ "</br>"; 
+// Create Variables
+// const a = "a";
+// const b = "b";
+// const c = "c";
+
+// Add the Variables to the Set
+letters.add("a");
+letters.add("b");
+letters.add("c");
+
+console.log(letters);
+
+const letter = new Set(["a","b","c"]);
+let tex ="";
+for(const x of letter){
+   tex += x + " ";
 }
-document.getElementById("num").innerHTML = count;
+console.log(tex);
+//map
 
-let x=5;
-let num1 = "";
-for(let x=0; x<10; x++){
-    num1 += "loop scope = " + x + " </br>";
-    document.getElementById('num1').innerHTML = num1;
+const fruits =new Map([
+    ["apple", 500],
+    ["bananas", 300],
+    ["orange", 200]
+])
+//console.log(fruits.set("lichi",700));
+//console.log(fruits.delete("apple"));
+//console.log(fruits.size);
+let text1 ="";
+for(const x of fruits.entries()){
+    text1 += x + " ";
 }
-console.log(x);
+// fruits.forEach(function( value, key){
+//     text1 += key + " =" + value + " ";
+// })
+
+console.log(text1);
