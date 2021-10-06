@@ -1,71 +1,154 @@
-// const person = {fName:"john", lName:"Doe", age:"26"};
-// let text="";
-// for(let x in person){
-//     text += person[x] + "</br>"
+const arry = ["bmw", "volvo", "run"];
+console.log(typeof [1,3,4,5]);
+
+console.log(typeof function myfun(){ });
+//console.log([1,3,4,5,4].constructor);
+
+function isArray(myArray){
+   console.log(myArray.constructor = Array);
+}
+isArray([1,3,4,6]);
+
+// const myDate = new Date();
+// document.getElementById("demo").innerHTML = isDate(myDate);
+
+function isDate(myDate) {
+  console.log(myDate.constructor === Date);
+}
+isDate(new Date())
+
+console.log(String(23));
+let day = new Date();
+console.log(day.toString());
+let a = 10.2633;
+console.log(a.toPrecision(3));
+let d= new Date();
+console.log(d.getTime());
+//console.log(Number(d));
+console.log(true.toString());
+console.log(101 | 010);
+console.log((0b010).toString(10));
+console.log(~6);
+
+let text = "Give 100%! 34 is the nium 24"; 
+let result = text.match(/\d/g);
+console.log(result);
+
+//let tex = "123456789";
+
+//let result = tex.match(/[1-4]/g);
+//console.log(result);
+
+// try{
+//     adddlert("welcome to error");
 // }
-//document.getElementById('demo').innerHTML = text;
-
-// let a = ["bmw", "volvo", "honda","nisan" ];
-// let car= "";
-// for(let x of a){
-//     car += x + " ";
+// catch(err){
+//     document.getElementById("demo").innerHTML = err.message;
 // }
-// console.log(car);
+/*
+function myFunction(){
+    const message = document.getElementById('demo').innerHTML ;
+    message.innerHTML = "";
+    let x = document.getElementById('input').Value;
+    try{
+        if(x =="") throw "empty";
+        if(isNaN(X)) throw "not a number";
+        x= Number(x);
+        if(x<5) throw "too low";
+        if(x<10) throw "too high";
+    }
+    catch(err){
+        message.innerHTML = "this is a " + err;
+    }
 
-// let cars = ["bmw", "volvo", "honda","nisan" ];
-// let text ="";
-// let i = 0;
-
-// while(cars[i]){
-//     text += "the number is  " + cars[i]+ " </br> ";
-//     i++;
-//  }
-// document.getElementById('num').innerHTML = text;
-
-let text="";
-for(let i=0; i<6; i++){
-    if(i==3){break}
-  text += "num = "+ i+ " ";
 }
-console.log(text);
+*/
+/*
+"use strict"
+console.log(this);
 
-
-const letters = new Set();
-
-// Create Variables
-// const a = "a";
-// const b = "b";
-// const c = "c";
-
-// Add the Variables to the Set
-letters.add("a");
-letters.add("b");
-letters.add("c");
-
-console.log(letters);
-
-const letter = new Set(["a","b","c"]);
-let tex ="";
-for(const x of letter){
-   tex += x + " ";
+function func (){
+    console.log(this);
 }
-console.log(tex);
-//map
 
-const fruits =new Map([
-    ["apple", 500],
-    ["bananas", 300],
-    ["orange", 200]
-])
-//console.log(fruits.set("lichi",700));
-//console.log(fruits.delete("apple"));
-//console.log(fruits.size);
-let text1 ="";
-for(const x of fruits.entries()){
-    text1 += x + " ";
-}
-// fruits.forEach(function( value, key){
-//     text1 += key + " =" + value + " ";
-// })
 
-console.log(text1);
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    id: 5566,
+    fullName : function() {
+      return this.firstName + " " + this.lastName;
+    },
+    getFullName: function(){
+        return this.fullName();
+    }
+  };
+
+  console.log(person.getFullName());
+*/
+//   const person1 ={
+//       fullName: function (){
+//           return this.firstName+ " " + this.lastName;
+//       }
+//   }
+//   const person2= {
+//       firstName:"john",
+//       lastName: "Doe"
+//   }
+//   console.log(person1.fullName.call(person2));
+
+ 
+//var hello;
+
+// hello = () => {
+//   document.getElementById("demoFunc").innerHTML += this;
+// }
+
+// //The window object calls the function:
+// window.addEventListener("load", hello);
+
+// //A button object calls the function:
+// document.getElementById("btn").addEventListener("click", hello);
+
+// let hello = function(){
+//     document.getElementById('demoFunc').innerHTML += this;
+// }
+// //The window object calls the function:
+// window.addEventListener('load', hello);
+
+// //A button object calls the function:
+// document.getElementById('btn').addEventListener('click', hello);
+
+// class Person{
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     play(status){
+//         console.log(`${this.name} is playing. ${status}`);
+//     }
+// }
+// const person1 = new Person("shakib", 35);
+// const person2= new Person("tamim", 36);
+
+// person1.play("well");
+// person2.play("bad");
+
+class Car {
+    constructor(name, year) {
+      this.name = name;
+      this.year = year;
+  
+    }
+    age() {
+      let date = new Date();
+      return date.getFullYear() - this.year;
+    }
+  }
+  
+  let myCar = new Car("Ford", 2014);
+  let myBus = new Car("BMW", 2013);
+  document.getElementById("demo").innerHTML =
+  "My car is " + myCar.age() + " years old.";
+
+ 
