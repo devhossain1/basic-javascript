@@ -1,101 +1,80 @@
+// const person = {
+//     fname:" John",
+//     lname:" Doe",
+//     age: 25
+//   };
+//   let txt = '';
 
-const sentence = " We know Lorem Ipsum is simply dummy text of the lorem ipsum \
-system and management. it is the text of lorem ipsum organization";
-
-const matches = sentence.match(/lorem/ig);
-const occarance = matches ? matches.length : 0;
-
-let position = sentence.search(/lorems/i);
-position = position >=0 ? position :"not found !!";
-
-console.log(occarance);
-console.log(position);
-
-//linearSearch(['a','b', 'c', 'd', 'e'], 'c');
-function linearSearch(arr, val){
-    const len = arr.length;
-    for(let i = 0; i < len; i++){
-        if(arr[i] === val){
-            return i;
-        }
-    }
-    return 'not found !';
-}
-console.log(linearSearch(['a','b', 'c', 'd', 'e'], 'c'));
-//anather problem solving
-
-function longestString(names){
-    let longestWord = '';
-
-    for(nameval of names){
-        if(nameval.length > longestWord.length){
-            longestWord = nameval;
-        }
-  }
-  return [longestWord, names.indexOf(longestWord)]
-}
+//   for(let x in person){
+//      txt += person[x];
+//   }
+ //   console.log(txt);
+//  let x = "";
+//   const myObj = {
+//     name: "John",
+//     age: 30,
+//     cars: [
+//       {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+//       {name:"BMW", models:["320", "X3", "X5"]},
+//       {name:"Fiat", models:["500", "Panda"]}
+//     ]
+//   }
   
+//   for (let i in myObj.cars) {
+//     x += "<h2>" + myObj.cars[i].name + "</h2>";
+//     for (let j in myObj.cars[i].models) {
+//       x += myObj.cars[i].models[j] + "<br>";
+//     }
+//   }
+  //document.getElementById("demo").innerHTML = x;
 
-console.log(longestString(['sumit saha', 'lern with sumit', 'hossain', 'ahmed']));
+  const myObj = {
+    name: "John",
+    age: 30,
+    cars: [
+      {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+      {name:"BMW", models:["320", "X3", "X5"]},
+      {name:"Fiat", models:["500", "Panda"]}
+    ]
+  }
+  console.log(delete myObj.cars);
+  console.log(myObj);
 
-//problelm solve number which is divisible by 3,5 and both 3&5
+  let a = new String("Bangladesh");
+  console.log(a.toUpperCase());
 
-function fizzBuzz(number){
-   
-    for(let i=1; i <= number; i++){
-        if(i % 15==0){
-            console.log(`${i} is fizzBuzz`);
-        }else if(i % 3 == 0){
-            console.log(`${i} is fizz`);
-        }else if(i % 5 == 0){
-            console.log(`${i} is Buzz`);
-        }else{
-            console.log(i);
-        }
-    }
-}
-fizzBuzz(46);
+  const person = {
+      fName:"John",
+      lName: "Doe",
+      age: 25 
+  }
+  person.fullName = function(){
+    return (this.fName + " " + this.lName).toUpperCase();
+  }
 
-//how can i find out falsey value from an array ?
-//falsy value = false, NaN, '', undefined, 0
+  console.log(person.fullName());
 
-const mixedArr = [
-    'lws',
-    undefined,
-    'hossain', 
-    false, 
-    "", 
-    "learn with sumit",
-    40,
-    "k",
-    true,
-    "thanks all",
-    NaN
-];
 
-const trueArray = mixedArr.filter(Boolean)
-console.log(trueArray);
+  const person1 = {
+    name: "John",
+    age: function(){return 30;}
+    
+  };
+  person1.age = person1.age.toString();
 
-const obj = {
-    a: 'lws',
-    b: undefined,
-    c: 'hossain', 
-    d: false, 
-    e: "", 
-    f: "learn with sumit",
-    g: 40,
-    h: "k",
-    i: true,
-    j: "thanks all",
-    k: NaN
-};
-const truthyObject = function(obj){
-    for(let i in obj){
-        if(!obj[i]){
-            delete obj[i];
-        }
-       
-    }
-    return obj;
-}
-console.log(truthyObject(obj));
+  console.log(JSON.stringify(person1));
+
+//   const personArray = Object.values(person1);
+//   for(let x of personArray){
+//       console.log(x);
+//   }
+
+
+//   let text = "";
+//   for(let i in person1){
+//      text += person1[i] + " ";
+//   }
+//   console.log(typeof text);
+  //document.getElementById("demo").innerHTML = text;
+//   person1.name + " " + person1.age + " "+ person1.city;
+
