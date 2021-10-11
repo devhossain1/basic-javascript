@@ -1,80 +1,107 @@
 // const person = {
-//     fname:" John",
-//     lname:" Doe",
-//     age: 25
-//   };
-//   let txt = '';
-
-//   for(let x in person){
-//      txt += person[x];
-//   }
- //   console.log(txt);
-//  let x = "";
-//   const myObj = {
-//     name: "John",
-//     age: 30,
-//     cars: [
-//       {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
-//       {name:"BMW", models:["320", "X3", "X5"]},
-//       {name:"Fiat", models:["500", "Panda"]}
-//     ]
-//   }
-  
-//   for (let i in myObj.cars) {
-//     x += "<h2>" + myObj.cars[i].name + "</h2>";
-//     for (let j in myObj.cars[i].models) {
-//       x += myObj.cars[i].models[j] + "<br>";
+//     firstName: "John",
+//     lastName: "Doe",
+//     language: "",
+//     set lang (lang){
+//        this.language = lang;
 //     }
-//   }
-  //document.getElementById("demo").innerHTML = x;
+//   };
+//   person.lang = "bn";
+//   console.log(person);
 
-  const myObj = {
-    name: "John",
-    age: 30,
-    cars: [
-      {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
-      {name:"BMW", models:["320", "X3", "X5"]},
-      {name:"Fiat", models:["500", "Panda"]}
-    ]
+// const person = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     language: "en",
+//     fullName: function(){
+//         return this.firstName + " " + this.lastName;
+//     }
+//   };
+//   console.log(person);
+
+//   const person = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     get fullName (){
+//         return this.firstName + " " + this.lastName;
+//     }
+//   };
+
+//   console.log(person.fullName);
+
+//   const person = {
+//     firstName: "John",
+//     lastName: "Doe",
+//   }; 
+//   Object.defineProperty(person, "fullName", {
+//       get : function(){
+//         return this.firstName + " " + this.lastName;
+//       }
+//   });
+//   console.log(person.fullName);
+
+  //constructor function
+
+  function Person(first, last, age){
+      this.firstName = first;
+      this.lastName = last;
+      this.age = age;
+    //   this.fullName = function() {
+    //     return this.firstName + " " + this.lastName
+    //   }
   }
-  console.log(delete myObj.cars);
-  console.log(myObj);
+  const hossain = new Person('hossain', 'ahmed', 28);
+  const rahim = new Person('rahim', 'mia', 75);
+  const sumit = new Person('sumit', 'shaha', 34);
 
-  let a = new String("Bangladesh");
-  console.log(a.toUpperCase());
 
-  const person = {
-      fName:"John",
-      lName: "Doe",
-      age: 25 
+  Person.prototype.country = "bangladesh";
+  console.dir(Person);
+  console.log(hossain.country)
+
+  const john = new String('john');
+  String.prototype.myFun = function(){
+      return 'I am doing fun';
   }
-  person.fullName = function(){
-    return (this.fName + " " + this.lName).toUpperCase();
-  }
 
-  console.log(person.fullName());
+  console.dir(john);
+  console.log(john.toUpperCase());
 
+String.prototype.myName = function(){
+    return "my name is hossain ahmed";
+}
+let x = "bangladesh";
+console.log(x.myName());
 
-  const person1 = {
-    name: "John",
-    age: function(){return 30;}
-    
-  };
-  person1.age = person1.age.toString();
+const nums = [1,3,5];
 
-  console.log(JSON.stringify(person1));
+//console.dir(nums[Symbol.iterator]());
+const numIterator = nums[Symbol.iterator]();
 
-//   const personArray = Object.values(person1);
-//   for(let x of personArray){
-//       console.log(x);
-//   }
+console.log(numIterator.next());
+console.log(numIterator.next());
+console.log(numIterator.next());
+console.log(numIterator.next());
 
+// for(let n of numbers){
+//     console.log(n);
+// }
+const myNumbers = {};
 
-//   let text = "";
-//   for(let i in person1){
-//      text += person1[i] + " ";
-//   }
-//   console.log(typeof text);
-  //document.getElementById("demo").innerHTML = text;
-//   person1.name + " " + person1.age + " "+ person1.city;
-
+myNumbers[Symbol.iterator] = function (){
+    let n = 0;
+    let done = false;
+    return{
+        next() {
+           n += 10;
+           if(n==100){done=true}
+           return {
+               value: n,
+               done : done
+           }
+        }
+    }
+}
+for(let num of myNumbers){
+    console.log(num);
+}
