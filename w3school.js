@@ -1,107 +1,90 @@
-// const person = {
-//     firstName: "John",
-//     lastName: "Doe",
-//     language: "",
-//     set lang (lang){
-//        this.language = lang;
-//     }
-//   };
-//   person.lang = "bn";
-//   console.log(person);
+// const letters = new Set(['a','b','c']);
+//console.log(letters instanceof Set);
 
-// const person = {
-//     firstName: "John",
-//     lastName: "Doe",
-//     language: "en",
-//     fullName: function(){
-//         return this.firstName + " " + this.lastName;
-//     }
-//   };
-//   console.log(person);
-
-//   const person = {
-//     firstName: "John",
-//     lastName: "Doe",
-//     get fullName (){
-//         return this.firstName + " " + this.lastName;
-//     }
-//   };
-
-//   console.log(person.fullName);
-
-//   const person = {
-//     firstName: "John",
-//     lastName: "Doe",
-//   }; 
-//   Object.defineProperty(person, "fullName", {
-//       get : function(){
-//         return this.firstName + " " + this.lastName;
-//       }
-//   });
-//   console.log(person.fullName);
-
-  //constructor function
-
-  function Person(first, last, age){
-      this.firstName = first;
-      this.lastName = last;
-      this.age = age;
-    //   this.fullName = function() {
-    //     return this.firstName + " " + this.lastName
-    //   }
-  }
-  const hossain = new Person('hossain', 'ahmed', 28);
-  const rahim = new Person('rahim', 'mia', 75);
-  const sumit = new Person('sumit', 'shaha', 34);
-
-
-  Person.prototype.country = "bangladesh";
-  console.dir(Person);
-  console.log(hossain.country)
-
-  const john = new String('john');
-  String.prototype.myFun = function(){
-      return 'I am doing fun';
-  }
-
-  console.dir(john);
-  console.log(john.toUpperCase());
-
-String.prototype.myName = function(){
-    return "my name is hossain ahmed";
-}
-let x = "bangladesh";
-console.log(x.myName());
-
-const nums = [1,3,5];
-
-//console.dir(nums[Symbol.iterator]());
-const numIterator = nums[Symbol.iterator]();
-
-console.log(numIterator.next());
-console.log(numIterator.next());
-console.log(numIterator.next());
-console.log(numIterator.next());
-
-// for(let n of numbers){
-//     console.log(n);
+// const setValue = letters.entries();
+// for(let a of setValue){
+//     console.log(a);
 // }
-const myNumbers = {};
+// letters.forEach(function(value){
+//     console.log(value);
+// })
 
-myNumbers[Symbol.iterator] = function (){
-    let n = 0;
-    let done = false;
-    return{
-        next() {
-           n += 10;
-           if(n==100){done=true}
-           return {
-               value: n,
-               done : done
-           }
-        }
+// const fruits = new Map();
+// fruits.set("bananas", 23);
+// fruits.set("apples", 50);
+// fruits.set("orange", 70);
+// fruits.set(004, 23);
+// console.log(fruits);
+//console.log(fruits instanceof Map);
+const lichies = 'lichy';
+
+const fruits = new Map([
+    ["apples", 500],
+    ["bananas", 300],
+    ["oranges", 200],
+    [true, 100],
+
+  ]);
+fruits.set(lichies, 400);
+ console.log(fruits.entries());
+  //fruits.forEach(function(value,key){
+    //console.log(key , value);
+
+  //})
+ 
+  //fruits.set(23, 600);
+  //console.log(fruits);
+
+//   const myFunction = new Function("a", "b", "return a * b");
+//   console.log(myFunction(3,4));
+//  function lalo (a,b){
+//      return a * b;
+//  }
+//  let x = lalo(2,4)*2;
+//  console.log(x);
+ 
+
+//function arguments
+function findMax(){
+  let max = -Infinity;
+  for(let i=0; i < arguments.length; i++){
+    if(arguments[i]>max){
+      max = arguments[i]
     }
+  }
+   return max;
+} 
+console.log(findMax(3,4,5,6));
+
+function a(x){
+  x.one=7;
+
+  return x.one * x.two;
+
 }
-for(let num of myNumbers){
-    console.log(num);
+let m={
+  one:4,
+  two:5
 }
+
+console.log(a(m));
+console.log(m);
+
+// This is a function constructor:
+function myFunction(arg1, arg2) {
+  this.firstName = arg1;
+  this.lastName  = arg2;
+}
+const myObj = new myFunction('john', 'Doe')
+// This creates a new object
+
+
+// This will return "John"
+console.log(myObj.firstName);
+
+
+  function hello(){
+    console.log("hellow how are you");
+  }
+
+window.hello();
