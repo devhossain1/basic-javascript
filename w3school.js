@@ -1,90 +1,86 @@
-// const letters = new Set(['a','b','c']);
-//console.log(letters instanceof Set);
 
-// const setValue = letters.entries();
-// for(let a of setValue){
-//     console.log(a);
+
+// const person = {
+//   fullName: function(city, country){
+//     return this.firstName + " " + this.lastName + " " + city + " "+ country;
+//   }
+// };
+
+// const person1= {
+//   firstName: "hossain",
+//   lastName: "ahmed"
+// };
+// const person2= {
+//   firstName:"sumit",
+//   lastName: "shaha"
+// };
+// console.log(person.fullName.apply(person1, ['dhaka', 'bangladesh']));
+
+// function temporary(){
+//   let counter = 0;
+
+//   return function(){
+//     counter += 1;
+//   }
 // }
-// letters.forEach(function(value){
-//     console.log(value);
-// })
+// const add = temporary();
+// console.dir(add);
+// add();
+// //console.dir(add);
+// add();
 
-// const fruits = new Map();
-// fruits.set("bananas", 23);
-// fruits.set("apples", 50);
-// fruits.set("orange", 70);
-// fruits.set(004, 23);
-// console.log(fruits);
-//console.log(fruits instanceof Map);
-const lichies = 'lichy';
+// //class
+// class Car{
+//   constructor(name, year){
+//     this.name = name;
+//     this.year = year;
+//   }
+//   // age(){
+//   //   let date =new Date();
+//   //   return date.getFullYear() - this.year;
+//   // }
+//   run(speed){
+//      console.log(this.name + "is running" + speed);
+//   }
+// }
+// const bmw = new Car('BMW', 2007);
 
-const fruits = new Map([
-    ["apples", 500],
-    ["bananas", 300],
-    ["oranges", 200],
-    [true, 100],
+// //console.log(bmw.name +'is '+ bmw.age() +'years old');
+// const audi = new Car('audi', 2000);
+// bmw.run('130 km per hour');
+// //console.log(bmw.name);
 
-  ]);
-fruits.set(lichies, 400);
- console.log(fruits.entries());
-  //fruits.forEach(function(value,key){
-    //console.log(key , value);
+// class Car{
+//   constructor(brand){
+//     this.carName= brand;
+//   }
+//   present(){
+//     return 'I have a' + this.carName;
+//   }
+// }
 
-  //})
- 
-  //fruits.set(23, 600);
-  //console.log(fruits);
-
-//   const myFunction = new Function("a", "b", "return a * b");
-//   console.log(myFunction(3,4));
-//  function lalo (a,b){
-//      return a * b;
-//  }
-//  let x = lalo(2,4)*2;
-//  console.log(x);
- 
-
-//function arguments
-function findMax(){
-  let max = -Infinity;
-  for(let i=0; i < arguments.length; i++){
-    if(arguments[i]>max){
-      max = arguments[i]
-    }
+// class Model  extends Car {
+//    constructor(brand,mod){
+//      super(brand);
+//      this.model = mod;
+//    }
+//    show(){
+//      return this.present() + ' , it is a ' + this.model;
+//    }
+// }
+// let myCar = new Model('ford', 'mustang');
+// console.log(myCar.show());
+class Car{
+  constructor(brand){
+    this.carName = brand;
   }
-   return max;
-} 
-console.log(findMax(3,4,5,6));
-
-function a(x){
-  x.one=7;
-
-  return x.one * x.two;
-
-}
-let m={
-  one:4,
-  two:5
-}
-
-console.log(a(m));
-console.log(m);
-
-// This is a function constructor:
-function myFunction(arg1, arg2) {
-  this.firstName = arg1;
-  this.lastName  = arg2;
-}
-const myObj = new myFunction('john', 'Doe')
-// This creates a new object
-
-
-// This will return "John"
-console.log(myObj.firstName);
-
-
-  function hello(){
-    console.log("hellow how are you");
+  get cnam(){
+    return this.carName;
   }
-
-window.hello();
+  set cnam(x){
+    this.carName = x;
+  }
+}
+let myCar = new Car('ford');
+myCar.cnam ="volvo";
+console.log(myCar.cnam);
