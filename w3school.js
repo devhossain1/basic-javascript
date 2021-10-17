@@ -1,86 +1,104 @@
 
+// var firstName, lastName, fullName;
+// firstName="hossain";
+// lastName= "ahmed";
+// fullName =  firstName + lastName;
+// let nameF= prompt('enter your fullname:');
 
-// const person = {
-//   fullName: function(city, country){
-//     return this.firstName + " " + this.lastName + " " + city + " "+ country;
-//   }
-// };
+// document.write(nameF.toUpperCase());
+// document.write(nameF.length);
 
-// const person1= {
-//   firstName: "hossain",
-//   lastName: "ahmed"
-// };
-// const person2= {
-//   firstName:"sumit",
-//   lastName: "shaha"
-// };
-// console.log(person.fullName.apply(person1, ['dhaka', 'bangladesh']));
+// var num1 = prompt(" enter first number:");
+// var num2 = prompt(" enter 2nd number:");
 
-// function temporary(){
-//   let counter = 0;
+// num1 = parseInt(num1);
+// num2 = parseInt(num2);
 
-//   return function(){
-//     counter += 1;
-//   }
-// }
-// const add = temporary();
-// console.dir(add);
-// add();
-// //console.dir(add);
-// add();
+// var sum, sub;
+// sum = num1+num2;
+// document.write("addintion = " + sum + "</br>");
 
-// //class
-// class Car{
-//   constructor(name, year){
-//     this.name = name;
-//     this.year = year;
-//   }
-//   // age(){
-//   //   let date =new Date();
-//   //   return date.getFullYear() - this.year;
-//   // }
-//   run(speed){
-//      console.log(this.name + "is running" + speed);
-//   }
-// }
-// const bmw = new Car('BMW', 2007);
+// sub = num1-num2;
+// document.write("subtraction = " + sub);
 
-// //console.log(bmw.name +'is '+ bmw.age() +'years old');
-// const audi = new Car('audi', 2000);
-// bmw.run('130 km per hour');
-// //console.log(bmw.name);
+// var num1 = prompt(" enter first number:");
+// var num2 = prompt(" enter 2nd number:");
 
-// class Car{
-//   constructor(brand){
-//     this.carName= brand;
-//   }
-//   present(){
-//     return 'I have a' + this.carName;
-//   }
-// }
+// num1 = parseInt(num1);
+// num2 = parseInt(num2);
 
-// class Model  extends Car {
-//    constructor(brand,mod){
-//      super(brand);
-//      this.model = mod;
-//    }
-//    show(){
-//      return this.present() + ' , it is a ' + this.model;
-//    }
-// }
-// let myCar = new Model('ford', 'mustang');
-// console.log(myCar.show());
-class Car{
-  constructor(brand){
-    this.carName = brand;
-  }
-  get cnam(){
-    return this.carName;
-  }
-  set cnam(x){
-    this.carName = x;
-  }
+// var sum, sub, mul, divi, modulas;
+
+// sum = num1+num2;
+// document.write(num1+ "+" + num2+ "=" + sum + "</br>");
+// sub = num1-num2;
+// document.write("subtraction = " + sub + "</br>");
+// mul = num1*num2;
+// document.write("multiplication = " + mul + "</br>");
+// divi = num1/num2;
+// document.write("division = " + divi);
+
+//let base = parseFloat(prompt('enter your base : '));
+//let height = parseFloat(prompt('enter your base : '));
+
+// let area = base * height;
+// document.write("area = "+ area);
+
+// var cels = parseFloat(prompt('enter celcius amount'));
+
+// var fah = cels*(9/5)+32;
+// document.write('fahrenheit = '+ fah);
+/*
+var marks = prompt('enter your mark:');
+if(marks > 100 || marks < 0)
+document.write("your marks is invalid")
+else if(marks >= 80)
+document.write("you got A+");
+else if(marks >= 70 && marks < 80)
+document.write("you got A");
+else if(marks >= 60 && marks < 70)
+document.write("you got A-");
+else if(marks >= 50 && marks < 60)
+document.write("you got B");
+else if(marks >= 40 && marks < 50)
+document.write("you got C");
+else if(marks >= 33 && marks < 40)
+document.write("you got D");
+else
+  document.write("you are fail");
+*/
+  // var num1 = prompt(" enter first number:");
+  // var num2 = prompt(" enter 2nd number:");  
+  // var num3 = prompt(" enter first number:");
+
+  // if(num1>num2 && num1>num3)
+  // document.write("num1 is larger");
+  // else if(num2>num1 && num2>num3)
+  // document.write("num2 is larger");
+  // else
+  // document.write("num3 is larger");
+  
+
+
+let letter = prompt('enput a letter:');
+  letter = letter.toLowerCase();
+switch(letter){
+  case "a":
+  case "e":
+  case "i":
+  case "o":
+  case "u":
+    console.log("vowel");
+    break;
+
+  default:
+    console.log("consonant"); 
 }
-let myCar = new Car('ford');
-myCar.cnam ="volvo";
-console.log(myCar.cnam);
+let m=parseInt(prompt("enter num1"));
+let n= parseInt(prompt("enter num1"));
+var sum = 0;
+for(let i = m; i <= n; i++ ){
+sum += i;
+}
+document.write(sum);
+
