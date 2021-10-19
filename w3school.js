@@ -1,30 +1,24 @@
 
-// let myImage = document.querySelector("#mypic");
+let myVar = document.getElementById('para2Id');
+function addStyle(){
+  myVar.classList.add('para-style');
+}
 
-// function myPicture1(){
-//   myImage.src = "image/devhossain1 (2).jpg";
-// }
+function removeStyle(){
+  myVar.classList.remove('para-style');
+}
 
-// function myPicture2(){
-//   myImage.src = "image/devhossain3.jpg";
-// }
+document.querySelector("#button3").addEventListener("click", function(){
+  alert (" Hello everybody !!");
+});
 
-// let heading1 = document.getElementsByTagName("h1")[0];
-// heading1.innerHTML = "Say hello";
 
-//creating element
-let heading3 = document.createElement("h1");
-let text = document.createTextNode('this is the heading 3');
-heading3.appendChild(text);
 
-let newHeading = document.getElementById("myDiv");
-newHeading.appendChild(heading3);
+let bangla = document.querySelector('h1');
 
-let heading2 = document.getElementsByTagName("h1")[1];
-newHeading.removeChild(heading2);
-
-let heading0 =document.createElement('h1');
-let text0 = document.createTextNode('this is the text 0 paragraph');
-heading0.appendChild(text0);
-let heading1 = document.getElementsByTagName("h1")[0]; 
-newHeading.insertBefore(heading0, heading1);
+bangla.addEventListener("mouseover", function(){
+  bangla.classList.add('my-style');
+});
+bangla.addEventListener("mouseout", function(){
+  bangla.classList.remove('my-style');
+})
