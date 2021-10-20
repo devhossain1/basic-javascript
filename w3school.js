@@ -1,55 +1,82 @@
-// let len = document.querySelectorAll(".myButton").length;
+// var locationDiv= document.querySelector(".location-div");
+// console.log(locationDiv);
 
-// for(let i=0; i<len; i++){
-//   document.querySelectorAll(".myButton")[i].addEventListener("click",function(){
-//     let text = this.innerHTML;
-//     document.querySelector("h1").innerHTML = text + " is clicked";
-//   }); 
+// var p1 = locationDiv.children[0];
+// p1.textContent = location.href; 
+
+// var p2 = locationDiv.children[1];
+// p2.textContent = location.protocol;
+
+// var p3 = locationDiv.children[2];
+// p3.textContent = location.hostname;
+
+// var p4 = locationDiv.children[3];
+// p4.textContent = location.port;
+
+// let visitButton = document.getElementById("visit-button");
+// visitButton.addEventListener("click", function(){
+//   location.assign("https://devhossain.com");
+// })
+
+// function deleteSomething(){
+//   let value = confirm("Do you want to delete?");
+//   if(value){
+//     console.log("deleted");
+//   }else{
+//     console.log("not deleted");
+//   }
+// }
+// deleteSomething();
+
+// function welcomeMessage(){
+//   let h1 = document.createElement("h1");
+//   let text;
+  
+//   let name = prompt("enter your name");
+//   if(name == null || name == ''){
+//     text = "no name found";
+//   }else{
+//     text = " welcome " + name;
+//   }
+
+//   var textNode= document.createTextNode(text);
+//   h1.appendChild(textNode);
+//   document.body.appendChild(h1);
+
+
+// }
+// welcomeMessage();
+
+// setTimeout(()=>{
+//   console.log("hello")
+// },2000);
+
+// setTimeout(display, 2000);
+// function display(){
+//   console.log("display timeout");
 // }
 
-for(let i=0; i<3; i++){
-  document.querySelectorAll(".myButton")[i].addEventListener("click", function(){
-    let text = this.innerHTML;
-    console.log(text);
-    audioPlay(text);
-    playAnimation(text);
+let saveButton = document.querySelector(".save-btn");
+let message = document.querySelector(".message");
 
-  });
-}
+// saveButton.addEventListener("click", saveUser);
 
-document.addEventListener("keypress", function(event){
-  var text = event.key;
-  audioPlay(text);
-  playAnimation(text);
-  
-});
+// function saveUser(){
+//   message.textContent = "user registration successfull !";
 
-function audioPlay(text){
-  switch(text){
-    case "a":
-      var song = new Audio("songs/Juboti-radhe.mp3");
-      song.play();
-      break;
-    case "b":
-      var song = new Audio("songs/paramSundori.mp3");
-      song.play();
-      break;
-    case "c":
-      var song = new Audio("songs/Juboti-radhe.mp3");
-      song.play();
-      break;
-  };
+//   setTimeout(()=>{
+//     message.textContent = "";
+//   }, 2000);
 
+// }
+saveButton.addEventListener("click", saveCount);
 
-}
+function saveCount(){
+  let count = 0;
+  message.textContent = count;
 
-function playAnimation(text){
-  var selectedButton = document.querySelector("." + text);
-  selectedButton.classList.add("anim");
-
-  setTimeout(function(){
-    selectedButton.classList.remove("anim");
-
-  },2000);
-
+  setInterval(()=>{
+    count++;
+    message.textContent = count;
+  },1000);
 }
