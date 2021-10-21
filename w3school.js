@@ -1,28 +1,35 @@
-let saveButton = document.querySelector(".save-btn");
-let message = document.querySelector(".message");
+// alert("HI everyone");
+// alert(hello);
+// alert("bye everyone");
 
-saveButton.addEventListener("click", startClock);
+// try{
+//   //code test
+//   alert("HI everyone");
+//   alert(hello);
+//   alert("bye everyone");
+// }catch(err){
+//   //handle error
+//   console.log("hello every one");
+//   console.log(err);
+//   console.log(err.name);
+//   console.log(err.message);
 
-function startClock(){
-  let date = new Date();
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  let seconds = date.getSeconds();
+// }finally{
+//   alert("bye everyone haha")
+// }
 
-  minutes=formatTime(minutes);
-  seconds = formatTime(seconds);
-
-  let time = hours+ ":"+ minutes + ":" + seconds;
-
-  message.textContent = time;
-  
-  setInterval(startClock, 1000);
-
-}
-function formatTime(value){
-  if(value<10){
-    value = "0" + value;
+document.querySelector("#checkButton").addEventListener("click", function(){
+  let num = document.querySelector("#numTextfield").value;
+  console.log(num);
+try{
+  if(num < 5){
+    throw "input number is too low";
+  }else if(num > 10){
+    throw "input number is too high";
   }
-  return value;
+
+}catch(err){
+  console.log(err);
 }
 
+});
