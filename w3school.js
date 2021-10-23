@@ -1,79 +1,132 @@
+//
+// const numbers = [5,15,32,22,12];
 
-const students = [
-  {
-    id:123,
-    name:'hossain',
-    gpa:3.24
-  },
+// const evenNum = (value,index, array) =>{
+//   if(value%2===0)
+//   return value;
+// }
+// let firstEvenNumIndex = numbers.findIndex(evenNum);
+// console.log(firstEvenNumIndex);
 
-  {
-    id:124,
-    name:'rahim',
-    gpa:2.84
-  },
+// let firstEvenNum = numbers.find(evenNum);
+// console.log(firstEvenNum);
 
-  {
-    id:223,
-    name:'raihan',
-    gpa:2.90
-  },
-  {
-    id:153,
-    name:'tofiq',
-    gpa:3.50
-  }
-];
+// const students = [
+//   {
+//     id:23,
+//     gpa:3.50
+//   },
+//   {
+//     id:24,
+//     gpa:3.20
+//   },
+//   {
+//     id:27,
+//     gpa:5.50
+//   },
+//   {
+//     id:28,
+//     gpa:4.50
+//   }
+// ];
+// console.log(students.find(x=>x.gpa>4));
 
-function studentsName1(){
-  return students.filter(function(x){
-    return x.gpa > 3;
-  }).map(function(y){
-    return y.name;
-  })
+// const message = "Today is friday";
+// console.log(message.includes("friday"));
+
+
+//  import {text as message} from './myModule.js'
+
+// console.log(message);
+// setText("good bye from es6");
+// console.log(text);
+
+// class Students {
+//   constructor(id, name){
+//     this.id = id;
+//     this.name = name;
+//   }
+
+//   set studentName(name){
+//     this.name = name;
+//   }
+
+//   get studentInfo(){
+//     return this.id + " " + this.name;
+//   }
+
+// }
+// let s1 = new Students(101, "ahossain");
+// console.log(s1);
+// console.log(s1.id);
+// console.log(s1.name);
+// s1.studentName = "hossainahmed";
+// console.log(s1.name);
+// console.log(s1.studentInfo);
+
+// const taskOne = ()=>{
+//   console.log("task1");
+// };
+
+
+// const taskTwo = ()=>{
+//   setTimeout(()=>{
+//     console.log("task2, dataloading");
+//   }, 2000);
+// };
+// const taskThree = ()=>{
+//   console.log("task3");
+// };
+// const taskFour = ()=>{
+//   console.log("task4");
+// };
+
+// taskOne();
+// taskTwo();
+// taskThree();
+// taskFour();
+function square(x){
+  console.log(`square of ${x} : ${x*x}`);
 
 }
-//console.log(studentsName1());
+// const y = square;
+// y(5);
+// function higherOrderFunction(num,callback){
+//   callback(num);
+// }
+// higherOrderFunction(6,square)
 
-const studentsName2 = ()=> students.filter((x) => x.gpa > 3).map((y) => y.name);
+const taskOne = (callback)=>{
+  console.log("task1");
+  callback();
+};
 
-console.log(studentsName2());
 
-//array destructing
-let numbers = [5,7,8,21,11];
-let [num1,num2,num3, ...z]= numbers;
-console.log(num1);
-console.log(num2);
-console.log(z);
+const taskTwo = (callback)=>{
+  setTimeout(()=>{
+    console.log("task2, dataloading");
+    callback();
+  }, 2000);
+};
+const taskThree = (callback)=>{
+  console.log("task3");
+  callback();
+};
+const taskFour = ()=>{
+    console.log("task4");
+  };
 
-let a=23, b=12;
-[a,b]=[b,a]
-console.log(a);
+taskOne(()=>{
+  taskTwo(()=>{
+    taskThree(()=>{
+      taskFour();
 
-//object destructing
-const studentsInfo ={
-  id:34,
-  fullName:"hossain ahmed",
-  gpa:3.44,
-  language: {
-    native:"bangla",
-    beginer:"english"
-  }
-}
+    });
+  });
+});
 
-let {id,fullName,gpa, language} = studentsInfo;
-console.log(fullName);
-console.log(id);
-console.log(language.native);
-
-//destracturing function parameters
-
-const studentFunc =({id,fullName})=>{
-
-console.log(`${id} , ${fullName}`);
-}
-
-let student = {
-  id:322,
-  fullName:"hossain"
-}
-studentFunc(student);
+console.log("hello");
+document.querySelector("button").addEventListener("click", ()=>{
+  console.log(" the button is clicked");
+});
+console.log("bye");
