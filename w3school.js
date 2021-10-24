@@ -1,89 +1,150 @@
-console.log("welcome");
-//how to create promise - pending , resolve, reject
 
-// const promise1 = new Promise((resolve, reject) =>{
-//   let completedPromise = true;
-//   if(completedPromise){
-//     resolve('completed promise 1');
-//   }else{
-//     reject(new Error('not completed promise 1'));
+
+// const makeRequest =(method,url,data)=>{
+
+//  return new Promise((resolve,reject)=>{
+//   const xhr = new XMLHttpRequest();
+//   xhr.open(method,url);
+//   xhr.setRequestHeader('content-type', 'application/json');
+//   xhr.onload=()=>{
+//     let data = xhr.response;
+//     console.log(xhr.responseURL);
+//     console.log(JSON.parse(data));
 //   }
-// });
 
-// const promise2 = new Promise((resolve, reject) =>{
-//   resolve("completed promise 2");
-// });
-// //console.log(promise1);
-// // promise1.then(res =>{
-// //   console.log(res);
-// // });
-// // promise1.catch(err =>{
-// //   console.log(err.message);
-// // })
+//   xhr.onerror=()=>{
+//     console.log("error is here");
+//   }
 
-// // promise2.then(res => console.log(res));
-// Promise.all([promise1, promise2]).then(([res1,res2]) => console.log(res1,res2));
-//const promise1 = new Promise((resolve, reject) =>{
-//   setTimeout(()=>{
-//     resolve("completed promise 1");
-//   },2000)
-// });
+//   xhr.send(JSON.stringify(data)); 
+//  })
 
-// const promise2 = new Promise((resolve, reject) =>{
-//    setTimeout(()=>{
-//      resolve("completed promise 2");
-//    },1000)
-//  });
+// }
 
-//  Promise.race([promise1, promise2]).then((res) => console.log(res));
+//  const getData = ()=>{
+//    makeRequest('GET','https://jsonplaceholder.typicode.com/posts')
+//    .then((res)=>console.log(res))
+//  }
+//  getData();
 
-const taskOne = ()=>{
-  return new Promise((resolve,reject)=>{
-    resolve('task 1 is completed');
-  });
-}
-const taskTwo = ()=>{
-  return new Promise((resolve,reject)=>{
-    resolve('task 2 is  completed');
-  });
-}
-const taskThree = ()=>{
-  return new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-      reject('task 3 is not completed');
-    },2000)
+//  const sendData = ()=>{
+//   makeRequest('POST','https://jsonplaceholder.typicode.com/posts',{
+//     title: 'foo',
+//     body: 'bar',
+//     userId: 1,
+//   });
+// }
+
+// const updateData = ()=>{
+//   makeRequest('PUT','https://jsonplaceholder.typicode.com/posts/1',{
+//     id: 1,
+//     title: 'foona',
+//     body: 'barbique',
+//     userId: 1,
+//   });
+// }
+// const updateSingleData = ()=>{
+//   makeRequest('PATCH','https://jsonplaceholder.typicode.com/posts/1',{
     
-  });
-}
-const taskFour = ()=>{
-  return new Promise((resolve,reject)=>{
-    resolve('task 4 is completed');
-  });
-}
+//     title: 'This is changed',
+  
+//   });
+// }
+// updateSingleData();
+// const deleteData = ()=>{
+//   makeRequest('DELETE','https://jsonplaceholder.typicode.com/posts');
+// }
+//  deleteData()
 
-// taskOne()
-// .then((res)=>console.log(res))
-// .then(taskTwo)
-// .then((res)=>console.log(res))
-// .then(taskThree)
-// .then((res)=>console.log(res))
-// .then(taskFour)
+//============ fetch api calling==================
+// fetch('https://jsonplaceholder.typicode.com/posts/1',{
+//   method: "DELETE",
+//   // headers: {
+//   //   'Content-type': 'application/json; charset=UTF-8',
+//   // },
+//   // body:JSON.stringify({
+    
+//   //   title: 'fooma the great',
+//   // }),
+// })
+// .then((res)=>{
+//   if(!res.ok){
+//     const message = `E rror : ${res.status}`;
+//     throw new Error(message);
+//   }
+//   return res.json();
+// })
 // .then((res)=>console.log(res))
 // .catch((err)=>console.log(err));
-const callAllTasks=async()=>{
-  try{
-    const t1 = await taskOne();
-  console.log(t1);
-  const t2 = await taskTwo();
-  console.log(t2);
-  const t3 = await taskThree();
-  console.log(t3);
-  const t4 = await taskFour();
-  console.log(t4);
-  }catch(error){
-    console.log(error);
-  }
-}
-callAllTasks();
 
-console.log("ends");
+//============async await api calling==================
+const makeRequest = async(url,config) =>{
+  const res = await fetch(url,config);
+  if(!res.ok){
+    const message = `Error : ${res.status}`;
+    throw new Error(message);
+  }
+  const data = await res.json();
+  return data;
+};
+
+// const updateData = () =>{
+//   makeRequest('https://jsonplaceholder.typicode.com/posts/1',{
+//     method: 'PATCH',
+//   body: JSON.stringify({
+//     title: 'fooma the great',
+  
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+//   })
+//   .then((res) =>console.log(res))
+//   .catch((err)=>console.log(err));
+// };
+// updateData();
+
+// const updateData = () =>{
+//   makeRequest('https://jsonplaceholder.typicode.com/posts/1',{
+//     method: 'PUT',
+//   body: JSON.stringify({
+//     id:1,
+//     title: 'fooma',
+//     body: 'barma',
+//     userId: 1,
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+//   })
+//   .then((res) =>console.log(res))
+//   .catch((err)=>console.log(err));
+// };
+// updateData();
+
+const sendData = () =>{
+  makeRequest('https://jsonplaceholder.typicode.com/posts',{
+    method: 'POST',
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+  })
+  .then((res) =>console.log(res))
+  .catch((err)=>console.log(err));
+
+};
+sendData();
+
+// const getData = () =>{
+//   makeRequest('https://jsonplaceholder.typicode.com/posts')
+//   .then((res) =>console.log(res))
+//   .catch((err)=>console.log(err));
+
+// };
+// getData();
+
